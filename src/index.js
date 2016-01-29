@@ -69,7 +69,7 @@ export function producer() {
   }
 }
 producer._name = function() { return randomArrayElement(producerNames) }
-producer.slug = function(name) { return slugify(name || producer.name()) }
+producer.slug = function(name) { return slugify(name || producer._name()) }
 
 export function product() {
   return {
