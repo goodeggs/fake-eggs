@@ -21,4 +21,7 @@ it('works', function() {
   fake.product._name()
   fake.product.unit()
   fake.product.count()
+
+  fake.foodhub()
+  fake.foodhub.slug()
 })

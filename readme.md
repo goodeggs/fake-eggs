@@ -5,6 +5,9 @@
 ```javascript
 var fakeEggs = require('fake-eggs')
 
+fakeEggs.foodhub() // => { slug: 'sfbay' }
+fakeEggs.foodhub.slug() // => 'la'
+
 fakeEggs.customer.firstName() // => 'Kelis'
 fakeEggs.customer.lastName() // => 'Bongio'
 fakeEggs.customer() // => { firstName: 'Rolf', lastName: 'Smith', phoneNumber: '+15553120192', email: 'floodwaters@yahoo.com' }

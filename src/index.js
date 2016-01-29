@@ -7,6 +7,7 @@ import domains from '../data/domains.json'
 import producerNames from '../data/producer_names.json'
 import productNames from '../data/product_names.json'
 import productUnits from '../data/product_units.json'
+import foodhubSlugs from '../data/foodhub_slugs.json'
 
 function integerInRange(lower, upper) {
   return Math.floor(Math.random() * (upper + lower)) - lower
@@ -81,3 +82,10 @@ export function product() {
 product._name = function() { return randomArrayElement(productNames) }
 product.unit = function() { return randomArrayElement(productUnits) }
 product.count = function() { return integerInRange(1, 100) }
+
+export function foodhub() {
+  return {
+    slug: foodhub.slug()
+  }
+}
+foodhub.slug = function() { return randomArrayElement(foodhubSlugs) }
