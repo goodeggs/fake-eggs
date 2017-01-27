@@ -10,7 +10,9 @@ import productUnits from '../data/product_units.json'
 import foodhubSlugs from '../data/foodhub_slugs.json'
 
 function integerInRange(lower, upper) {
-  return Math.floor(Math.random() * (upper + lower)) - lower
+  const range = upper - lower;
+  const rand = Math.floor(Math.random() * range);
+  return lower + rand;
 }
 function randomArrayElement(array) {
   return array[integerInRange(0, array.length)]
@@ -89,3 +91,81 @@ export function foodhub() {
   }
 }
 foodhub.slug = function() { return randomArrayElement(foodhubSlugs) }
+
+function getHexString(number, byteCount) {
+  const charCount = byteCount * 2;
+  return _.padStart(
+    Math.floor(number).toString(16).substr(0, charCount),
+    charCount,
+    '0'
+  )
+}
+
+function maxNumberGivenByteCount(byteCount) {
+  return Math.pow(256, byteCount);
+}
+
+export function objectId({timestamp, from, to, machineId, processId, counter} = {}) {
+  const TIMESTAMP_BYTES = 4;
+  const MACHINE_ID_BYTES = 3;
+  const PROCESS_ID_BYTES = 2;
+  const COUNTER_BYTES = 3;
+  
+  if (_.isNil(timestamp)) {
+    timestamp = date(from, to);
+  }
+  
+  if (_.isNil(machineId)) {
+    machineId = integerInRange(0, maxNumberGivenByteCount(MACHINE_ID_BYTES));
+  }
+  
+  if (_.isNil(processId)) {
+    processId = integerInRange(0, maxNumberGivenByteCount(PROCESS_ID_BYTES));
+  }
+  
+  if (_.isNil(counter)) {
+    counter = integerInRange(0, maxNumberGivenByteCount(COUNTER_BYTES));
+  }
+  
+  return [
+    getHexString(new Date(timestamp).valueOf() / 1000, TIMESTAMP_BYTES),
+    getHexString(machineId, MACHINE_ID_BYTES),
+    getHexString(processId, PROCESS_ID_BYTES),
+    getHexString(counter, COUNTER_BYTES),
+  ].join('');
+}
+
+function dateInSeconds(_date) {
+  return Math.floor(new Date(_date).valueOf() / 1000);
+}
+
+export function date(from, to) {
+  if (_.isNil(from)) from = 'Tue Oct 04 2011 10:44:00 GMT-0700 (PDT)'; // https://github.com/goodeggs/avocado/commit/143f03ff267766be62189f901a174b02006650eb
+  if (_.isNil(to)) to = 'Tue Dec 31 2019 16:00:00 GMT-0800 (PST)'; // ¯\_(ツ)_/¯
+  
+  return new Date(
+    integerInRange(
+      dateInSeconds(from),
+      dateInSeconds(to)
+    ) * 1000
+  );
+}
+
+export function day(from, to) {
+  const _date = date(from, to);
+  const year = _.padStart(_date.getFullYear(), 4, '0');
+  const month = _.padStart(_date.getMonth() + 1, 2, '0');
+  const dayOfMonth = _.padStart(_date.getDate(), 2, '0');
+  return `${year}-${month}-${dayOfMonth}`;
+}
+
+export default {
+  employee,
+  customer,
+  producer,
+  product,
+  foodhub,
+  objectId,
+  date,
+  day,
+}
