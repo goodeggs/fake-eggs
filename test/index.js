@@ -25,7 +25,7 @@ it('works', function() {
   fake.foodhub()
   fake.foodhub.slug()
   
-  console.log(fake.objectId())
-  console.log(fake.date())
-  console.log(fake.day())
+  fake.objectId()
+  fake.date()
+  fake.day()
 })

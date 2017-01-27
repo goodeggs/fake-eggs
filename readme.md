@@ -1,29 +1,34 @@
-# fake-eggs - create all sorts of Good Eggs style fake data!
+# fake-eggs
+Providing you with all sorts of Good Eggs-style fake data!
 
 ## Examples
 
 ```javascript
-var fakeEggs = require('fake-eggs')
+var fake = require('fake-eggs')
 
-fakeEggs.foodhub() // => { slug: 'sfbay' }
-fakeEggs.foodhub.slug() // => 'la'
+fake.date() // => Date<Fri Nov 29 2013 15:42:37 GMT-0800 (PST)>
+fake.day() // => '2014-06-27'
+fake.objectId() // => '55bcc51317b1afb4bc174ccc'
 
-fakeEggs.customer.firstName() // => 'Kelis'
-fakeEggs.customer.lastName() // => 'Bongio'
-fakeEggs.customer() // => { firstName: 'Rolf', lastName: 'Smith', phoneNumber: '+15553120192', email: 'floodwaters@yahoo.com' }
+fake.foodhub() // => { slug: 'sfbay' }
+fake.foodhub.slug() // => 'la'
 
-fakeEggs.employee.firstName() // => 'Joni'
-fakeEggs.employee.lastName() // => 'Wu'
-fakeEggs.employee() // => { firstName: 'Benji', lastName: 'Gustafson', phoneNumber: '+15550392918', email: 'bengi.gustafson@goodeggs.com' }
+fake.customer.firstName() // => 'Kelis'
+fake.customer.lastName() // => 'Bongio'
+fake.customer() // => { firstName: 'Rolf', lastName: 'Smith', phoneNumber: '+15553120192', email: 'floodwaters@yahoo.com' }
 
-fakeEggs.producer._name() // => 'Sand Hill Bakery'
-fakeEggs.producer.slug() // => 'pork-r-us'
-fakeEggs.producer() // => { name: 'Greenwich Sandwiches', slug: 'greenwich-sandwiches' }
+fake.employee.firstName() // => 'Joni'
+fake.employee.lastName() // => 'Wu'
+fake.employee() // => { firstName: 'Benji', lastName: 'Gustafson', phoneNumber: '+15550392918', email: 'bengi.gustafson@goodeggs.com' }
 
-fakeEggs.product._name() // => 'Large Brown Pastured Eggs'
-fakeEggs.product.unit() // => 'oz'
-fakeEggs.product.count() // => 45
-fakeEggs.product() // => { name: 'Pork Roast', unit: 'lb', count: 21 }
+fake.producer._name() // => 'Sand Hill Bakery'
+fake.producer.slug() // => 'pork-r-us'
+fake.producer() // => { name: 'Greenwich Sandwiches', slug: 'greenwich-sandwiches' }
+
+fake.product._name() // => 'Large Brown Pastured Eggs'
+fake.product.unit() // => 'oz'
+fake.product.count() // => 45
+fake.product() // => { name: 'Pork Roast', unit: 'lb', count: 21 }
 ```
 
 ## Contributing
