@@ -8,6 +8,7 @@ import producerNames from '../data/producer_names.json'
 import productNames from '../data/product_names.json'
 import productUnits from '../data/product_units.json'
 import foodhubSlugs from '../data/foodhub_slugs.json'
+import tzids from '../data/tzids.json'
 
 function integerInRange(lower, upper) {
   const range = upper - lower;
@@ -159,6 +160,10 @@ export function day(from, to) {
   return `${year}-${month}-${dayOfMonth}`;
 }
 
+export function tzid() {
+  return randomArrayElement(tzids);
+}
+
 export default {
   employee,
   customer,
@@ -168,4 +173,5 @@ export default {
   objectId,
   date,
   day,
+  tzid,
 }

@@ -28,4 +28,5 @@ it('works', function() {
   fake.objectId()
   fake.date()
   fake.day()
+  fake.tzid()
 })

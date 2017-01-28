@@ -8,6 +8,7 @@ var fake = require('fake-eggs')
 
 fake.date() // => Date<Fri Nov 29 2013 15:42:37 GMT-0800 (PST)>
 fake.day() // => '2014-06-27'
+fake.tzid() // => 'America/Los_Angeles'
 fake.objectId() // => '55bcc51317b1afb4bc174ccc'
 
 fake.foodhub() // => { slug: 'sfbay' }
