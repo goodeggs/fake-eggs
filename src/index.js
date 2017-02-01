@@ -32,33 +32,45 @@ function email(username, domain) {
   if (!domain) domain = randomArrayElement(domains)
   return `${username}@${domain}`
 }
+function fullName(_firstName, _lastName) {
+  if (!_firstName) _firstName = firstName();
+  if (!_lastName) _lastName = lastName();
+  return `${_firstName} ${_lastName}`;
+}
 
 export function customer() {
+  const _firstName = customer.firstName();
+  const _lastName = customer.lastName();
+  
   return {
-    firstName: customer.firstName(),
-    lastName: customer.lastName(),
+    firstName: _firstName,
+    lastName: _lastName,
+    fullName: customer.fullName(_firstName, _lastName),
     phoneNumber: customer.phoneNumber(),
-    email: customer.email()
+    email: customer.email(),
   }
 }
 customer.firstName = firstName
 customer.lastName = lastName
 customer.phoneNumber = phoneNumber
+customer.fullName = fullName
 customer.email = () => email(randomArrayElement(usernames), randomArrayElement(domains))
 
 export function employee() {
-  var firstName = employee.firstName()
-  var lastName = employee.lastName()
+  var _firstName = employee.firstName()
+  var _lastName = employee.lastName()
   return {
-    firstName: firstName,
-    lastName: lastName,
+    firstName: _firstName,
+    lastName: _lastName,
+    fullName: employee.fullName(_firstName, _lastName),
     phoneNumber: employee.phoneNumber(),
-    email: employee.email(firstName, lastName)
+    email: employee.email(_firstName, _lastName),
   }
 }
 employee.firstName = firstName
 employee.lastName = lastName
 employee.phoneNumber = phoneNumber
+employee.fullName = fullName
 employee.email = function(firstName, lastName) {
   if (!firstName) firstName = employee.firstName()
   if (!lastName) lastName = employee.lastName()
