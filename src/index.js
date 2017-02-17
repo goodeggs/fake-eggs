@@ -10,12 +10,18 @@ import productUnits from '../data/product_units.json'
 import foodhubSlugs from '../data/foodhub_slugs.json'
 import tzids from '../data/tzids.json'
 
-function integerInRange(lower, upper) {
+export function randomString (length, charset) {
+  if (_.isNil(length)) length = integerInRange(1, 40);
+  if (_.isNil(charset)) charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ';
+  const chars = charset.split('');
+  return _.times(length, () => randomArrayElement(chars)).join('');
+}
+export function integerInRange(lower, upper) {
   const range = upper - lower;
   const rand = Math.floor(Math.random() * range);
   return lower + rand;
 }
-function randomArrayElement(array) {
+export function randomArrayElement(array) {
   return array[integerInRange(0, array.length)]
 }
 function slugify(text) {
@@ -23,16 +29,33 @@ function slugify(text) {
     .toLowerCase()
     .replace(/[^\w\-_]+/g, '') // remove all non-word characters
 }
-function randomDigit() { return integerInRange(0, 10) }
-function firstName() { return randomArrayElement(firstNames) }
-function lastName() { return randomArrayElement(lastNames) }
-function phoneNumber() { return `+1555${_.times(7, randomDigit).join('')}` }
-function email(username, domain) {
+export function randomDigit() { return integerInRange(0, 10) }
+export function uri(domain = 'goodeggs.com') {
+  const uriCharset = 'abcdefghijklmnopqrstuvwxyz_1234567890';
+  return [
+    randomArrayElement(['http', 'https']),
+    '://',
+    randomArrayElement([
+      `${randomString(integerInRange(1, 7), uriCharset)}.`,
+      '']),
+    domain,
+    '/',
+    _.times(integerInRange(1,5), () =>
+      randomString(integerInRange(1, 8), uriCharset)
+    ).join('/')
+  ].join('');
+}
+
+
+export function firstName() { return randomArrayElement(firstNames) }
+export function lastName() { return randomArrayElement(lastNames) }
+export function phoneNumber() { return `+1555${_.times(7, randomDigit).join('')}` }
+export function email(username, domain) {
   if (!username) username = randomArrayElement(usernames)
   if (!domain) domain = randomArrayElement(domains)
   return `${username}@${domain}`
 }
-function fullName(_firstName, _lastName) {
+export function fullName(_firstName, _lastName) {
   if (!_firstName) _firstName = firstName();
   if (!_lastName) _lastName = lastName();
   return `${_firstName} ${_lastName}`;
@@ -177,6 +200,14 @@ export function tzid() {
 }
 
 export default {
+  integerInRange,
+  randomArrayElement,
+  randomDigit,
+  firstName,
+  lastName,
+  phoneNumber,
+  email,
+  fullName,
   employee,
   customer,
   producer,
@@ -186,4 +217,6 @@ export default {
   date,
   day,
   tzid,
+  uri,
+  randomString,
 }

@@ -25,8 +25,13 @@ it('works', function() {
   fake.foodhub()
   fake.foodhub.slug()
   
-  fake.objectId()
   fake.date()
   fake.day()
   fake.tzid()
+  fake.objectId()
+  fake.integerInRange(1, 10);
+  fake.randomArrayElement(['a','b','c']);
+  fake.randomDigit();
+  fake.randomString();
+  fake.uri();
 })
