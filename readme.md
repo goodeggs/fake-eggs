@@ -1,6 +1,8 @@
 # fake-eggs
 Providing you with all sorts of Good Eggs-style fake data!
 
+All exported functions are stateless (meaning you don't have to worry about binding to `this`).
+
 ## Examples
 
 ```javascript
