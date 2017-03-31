@@ -2,19 +2,6 @@ import _ from 'lodash';
 import date from './date';
 import integerInRange from './integer_in_range';
 
-function getHexString(number, byteCount) {
-  const charCount = byteCount * 2;
-  return _.padStart(
-    Math.floor(number).toString(16).substr(0, charCount),
-    charCount,
-    '0'
-  )
-}
-
-function maxNumberGivenByteCount(byteCount) {
-  return Math.pow(256, byteCount);
-}
-
 export default function objectId({timestamp, from, to, machineId, processId, counter} = {}) {
   const TIMESTAMP_BYTES = 4;
   const MACHINE_ID_BYTES = 3;
@@ -43,5 +30,20 @@ export default function objectId({timestamp, from, to, machineId, processId, cou
     getHexString(processId, PROCESS_ID_BYTES),
     getHexString(counter, COUNTER_BYTES),
   ].join('');
+}
+
+module.exports = objectId;
+
+function getHexString(number, byteCount) {
+  const charCount = byteCount * 2;
+  return _.padStart(
+    Math.floor(number).toString(16).substr(0, charCount),
+    charCount,
+    '0'
+  )
+}
+
+function maxNumberGivenByteCount(byteCount) {
+  return Math.pow(256, byteCount);
 }
 

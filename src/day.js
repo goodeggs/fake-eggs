@@ -8,4 +8,4 @@ export default function day(from, to) {
   const dayOfMonth = _.padStart(_date.getDate(), 2, '0');
   return `${year}-${month}-${dayOfMonth}`;
 }
-
+module.exports = day;

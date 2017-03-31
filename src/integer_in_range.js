@@ -3,3 +3,5 @@ export default function integerInRange(lower, upper) {
   const rand = Math.floor(Math.random() * range);
   return lower + rand;
 }
+
+module.exports = integerInRange;

@@ -1,5 +1,3 @@
-import usernames from '../data/usernames.json'
-import domains from '../data/domains.json'
 import firstName from './first_name';
 import lastName from './last_name';
 import phoneNumber from './phone_number';
@@ -19,8 +17,10 @@ export default function customer() {
     email: customer.email(),
   }
 }
+module.exports = customer;
+
 customer.firstName = firstName
 customer.lastName = lastName
 customer.phoneNumber = phoneNumber
 customer.fullName = fullName
-customer.email = () => email(randomArrayElement(usernames), randomArrayElement(domains))
+customer.email = () => email()

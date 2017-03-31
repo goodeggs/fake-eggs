@@ -7,3 +7,4 @@ export default function fullName(_firstName, _lastName) {
   return `${_firstName} ${_lastName}`;
 }
 
+module.exports = fullName;

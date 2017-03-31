@@ -16,3 +16,4 @@ export default function date(from, to) {
     ) * 1000
   );
 }
+module.exports = date;

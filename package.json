@@ -2,9 +2,9 @@
   "name": "fake-eggs",
   "version": "1.5.0",
   "description": "Generate Good Eggs-flavored data for development / test fixtures",
-  "main": "lib/index.js",
+  "main": "index.js",
   "scripts": {
-    "build": "babel src -d lib",
+    "build": "babel src -d .",
     "prepublish": "npm run build",
     "test": "mocha"
   },

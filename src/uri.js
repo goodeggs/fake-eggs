@@ -19,4 +19,4 @@ export default function uri(domain = 'goodeggs.com') {
     ).join('/')
   ].join('');
 }
-
+module.exports = uri;

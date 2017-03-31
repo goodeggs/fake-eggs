@@ -3,3 +3,4 @@ export default function slugify(text) {
     .toLowerCase()
     .replace(/[^\w\-_]+/g, '') // remove all non-word characters
 }
+module.exports = slugify;

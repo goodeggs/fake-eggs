@@ -8,3 +8,4 @@ export default function randomString (length, charset) {
   const chars = charset.split('');
   return _.times(length, () => randomArrayElement(chars)).join('');
 }
+module.exports = randomString;

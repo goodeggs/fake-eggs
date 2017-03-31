@@ -16,6 +16,8 @@ export default function employee() {
     email: employee.email(_firstName, _lastName),
   }
 }
+module.exports = employee;
+
 employee.firstName = firstName
 employee.lastName = lastName
 employee.phoneNumber = phoneNumber

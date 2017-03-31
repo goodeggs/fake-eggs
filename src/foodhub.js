@@ -1,4 +1,3 @@
-import foodhubSlugs from '../data/foodhub_slugs.json'
 import randomArrayElement from './random_array_element';
 
 export default function foodhub() {
@@ -6,4 +5,14 @@ export default function foodhub() {
     slug: foodhub.slug()
   }
 }
+module.exports = foodhub;
+
 foodhub.slug = function() { return randomArrayElement(foodhubSlugs) }
+
+const foodhubSlugs = [
+  "sfbay",
+  "la",
+  "nola",
+  "nyc",
+  "tomorrowland"
+];
