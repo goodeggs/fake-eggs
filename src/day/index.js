@@ -1,5 +1,6 @@
 import _ from 'lodash';
-import date from './date';
+
+import date from '../date';
 
 export default function day(from, to) {
   const _date = date(from, to);

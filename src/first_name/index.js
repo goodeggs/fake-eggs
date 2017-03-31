@@ -1,4 +1,4 @@
-import randomArrayElement from './random_array_element';
+import randomArrayElement from '../random_array_element';
 
 export default function firstName() { return randomArrayElement(firstNames) }
 module.exports = firstName;

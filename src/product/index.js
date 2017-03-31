@@ -1,5 +1,5 @@
-import randomArrayElement from './random_array_element';
-import integerInRange from './integer_in_range';
+import randomArrayElement from '../random_array_element';
+import integerInRange from '../integer_in_range';
 
 export default function product() {
   return {

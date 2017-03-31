@@ -1,19 +1,9 @@
-import randomArrayElement from './random_array_element';
-import slugify from './slugify';
+import randomArrayElement from '../random_array_element';
 
-export default function producer() {
-  var name = producer._name()
-  return {
-    name: name,
-    slug: producer.slug(name)
-  }
-}
-module.exports = producer;
+export default function lastName() { return randomArrayElement(lastNames) }
+module.exports = lastName;
 
-producer._name = function() { return randomArrayElement(producerNames) }
-producer.slug = function(name) { return slugify(name || producer._name()) }
-
-const producerNames = [
+const lastNames = [
   "Abbott",
   "Abernathy",
   "Abshire",

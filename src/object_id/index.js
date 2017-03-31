@@ -1,6 +1,7 @@
 import _ from 'lodash';
-import date from './date';
-import integerInRange from './integer_in_range';
+
+import date from '../date';
+import integerInRange from '../integer_in_range';
 
 export default function objectId({timestamp, from, to, machineId, processId, counter} = {}) {
   const TIMESTAMP_BYTES = 4;

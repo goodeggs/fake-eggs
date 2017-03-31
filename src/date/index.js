@@ -1,5 +1,6 @@
 import _ from 'lodash';
-import integerInRange from './integer_in_range';
+
+import integerInRange from '../integer_in_range';
 
 function dateInSeconds(_date) {
   return Math.floor(new Date(_date).valueOf() / 1000);

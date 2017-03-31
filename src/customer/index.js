@@ -1,9 +1,9 @@
-import firstName from './first_name';
-import lastName from './last_name';
-import phoneNumber from './phone_number';
-import fullName from './full_name';
-import email from './email';
-import randomArrayElement from './random_array_element';
+import firstName from '../first_name';
+import lastName from '../last_name';
+import phoneNumber from '../phone_number';
+import fullName from '../full_name';
+import email from '../email';
+import randomArrayElement from '../random_array_element';
 
 export default function customer() {
   const _firstName = customer.firstName();
