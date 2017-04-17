@@ -1,6 +1,6 @@
 {
   "name": "fake-eggs",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "Generate Good Eggs-flavored data for development / test fixtures",
   "main": "index.js",
   "scripts": {
