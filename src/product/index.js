@@ -1,18 +1,30 @@
+// @flow
 import randomArrayElement from '../random_array_element';
 import integerInRange from '../integer_in_range';
 
-export default function product() {
+export default function product(): {
+  name: string,
+  unit: string,
+  count: number,
+} {
   return {
     name: product._name(),
     unit: product.unit(),
     count: product.count()
   }
 }
-module.exports = product;
 
-product._name = function() { return randomArrayElement(productNames) }
-product.unit = function() { return randomArrayElement(productUnits) }
-product.count = function() { return integerInRange(1, 100) }
+product._name = function(): string {
+  return randomArrayElement(productNames);
+}
+
+product.unit = function(): string {
+  return randomArrayElement(productUnits);
+}
+
+product.count = function(): number {
+  return integerInRange(1, 100);
+}
 
 const productNames = [
   "Organic Baby Spinach",

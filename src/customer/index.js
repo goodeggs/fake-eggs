@@ -1,3 +1,5 @@
+// @flow
+
 import firstName from '../first_name';
 import lastName from '../last_name';
 import phoneNumber from '../phone_number';
@@ -5,7 +7,13 @@ import fullName from '../full_name';
 import email from '../email';
 import randomArrayElement from '../random_array_element';
 
-export default function customer() {
+export default function customer(): {
+  firstName: string,
+  lastName: string,
+  fullName: string,
+  phoneNumber: string,
+  email: string,
+} {
   const _firstName = customer.firstName();
   const _lastName = customer.lastName();
   
@@ -16,8 +24,7 @@ export default function customer() {
     phoneNumber: customer.phoneNumber(),
     email: customer.email(),
   }
-}
-module.exports = customer;
+};
 
 customer.firstName = firstName
 customer.lastName = lastName

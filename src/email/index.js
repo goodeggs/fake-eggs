@@ -1,11 +1,12 @@
+// @flow
+
 import randomArrayElement from '../random_array_element';
 
-export default function email(username, domain) {
-  if (!username) username = randomArrayElement(usernames)
-  if (!domain) domain = randomArrayElement(domains)
+export default function email(username?: string, domain?: string): string {
+  if (username == null) username = randomArrayElement(usernames)
+  if (domain == null) domain = randomArrayElement(domains)
   return `${username}@${domain}`
 }
-module.exports = email;
 
 const usernames = [
   "expandcostnest",

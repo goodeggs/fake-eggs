@@ -1,10 +1,12 @@
+// @flow
+
 import _ from 'lodash';
 
-import randomArrayElement from './random_array_element';
-import randomString from './random_string';
-import integerInRange from './integer_in_range';
+import randomArrayElement from '../random_array_element';
+import randomString from '../random_string';
+import integerInRange from '../integer_in_range';
 
-export default function uri(domain = 'goodeggs.com') {
+export default function uri(domain?: string = 'goodeggs.com'): string {
   const uriCharset = 'abcdefghijklmnopqrstuvwxyz_1234567890';
   return [
     randomArrayElement(['http', 'https']),
@@ -19,4 +21,3 @@ export default function uri(domain = 'goodeggs.com') {
     ).join('/')
   ].join('');
 }
-module.exports = uri;

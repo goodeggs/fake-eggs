@@ -1,9 +1,10 @@
+// @flow
+
 import randomArrayElement from '../random_array_element';
 
-export default function tzid() {
+export default function tzid(): string {
   return randomArrayElement(tzids);
 }
-module.exports = tzid;
 
 const tzids = [
   "America/Los_Angeles",

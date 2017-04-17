@@ -1,3 +1,5 @@
+// @flow
+
 // raw values
 export {default as randomString} from './random_string';
 export {default as integerInRange} from './integer_in_range';

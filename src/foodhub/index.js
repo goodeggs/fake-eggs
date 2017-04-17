@@ -1,13 +1,18 @@
+// @flow
+
 import randomArrayElement from '../random_array_element';
 
-export default function foodhub() {
+export default function foodhub(): {
+  slug: string,
+} {
   return {
     slug: foodhub.slug()
   }
 }
-module.exports = foodhub;
 
-foodhub.slug = function() { return randomArrayElement(foodhubSlugs) }
+foodhub.slug = function ():string {
+  return randomArrayElement(foodhubSlugs)
+}
 
 const foodhubSlugs = [
   "sfbay",

@@ -1,7 +1,10 @@
+// @flow
+
 import randomArrayElement from '../random_array_element';
 
-export default function lastName() { return randomArrayElement(lastNames) }
-module.exports = lastName;
+export default function lastName(): string {
+  return randomArrayElement(lastNames);
+}
 
 const lastNames = [
   "Abbott",

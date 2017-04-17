@@ -6,7 +6,7 @@
   "scripts": {
     "build": "babel src -d .",
     "prepublish": "npm run build",
-    "test": "mocha"
+    "test": "flow && mocha"
   },
   "repository": {
     "type": "git",
@@ -27,8 +27,11 @@
   },
   "devDependencies": {
     "babel-cli": "^6.3.17",
+    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-es2015": "^6.3.13",
+    "babel-preset-flow": "^6.23.0",
     "babel-register": "^6.3.13",
+    "flow-bin": "^0.44.0",
     "mocha": "^2.3.4"
   },
   "publishConfig": {
