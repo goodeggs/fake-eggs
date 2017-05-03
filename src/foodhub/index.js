@@ -1,18 +1,12 @@
 // @flow
 
-import randomArrayElement from '../random_array_element';
+import sample from '../sample';
 
-export default function foodhub(): {
-  slug: string,
-} {
-  return {
-    slug: foodhub.slug()
-  }
+function slug (): string {
+  return sample(foodhubSlugs);
 }
 
-foodhub.slug = function ():string {
-  return randomArrayElement(foodhubSlugs)
-}
+export default {slug}
 
 const foodhubSlugs = [
   "sfbay",

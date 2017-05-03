@@ -1,28 +1,18 @@
 // @flow
-import randomArrayElement from '../random_array_element';
+import sample from '../sample';
 import integerInRange from '../integer_in_range';
 
-export default function product(): {
-  name: string,
-  unit: string,
-  count: number,
-} {
-  return {
-    name: product._name(),
-    unit: product.unit(),
-    count: product.count()
-  }
+export default {name, unit, count};
+
+function name (): string {
+  return sample(productNames);
 }
 
-product._name = function(): string {
-  return randomArrayElement(productNames);
+function unit (): string {
+  return sample(productUnits);
 }
 
-product.unit = function(): string {
-  return randomArrayElement(productUnits);
-}
-
-product.count = function(): number {
+function count (): number {
   return integerInRange(1, 100);
 }
 
