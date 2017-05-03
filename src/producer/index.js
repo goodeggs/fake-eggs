@@ -17,7 +17,7 @@ producer._name = function(): string {
   return randomArrayElement(producerNames);
 }
 
-producer.slug = function(name: string): string {
+producer.slug = function(name?: string): string {
   return slugify(name || producer._name())
 }
 

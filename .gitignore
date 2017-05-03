@@ -1,6 +1,7 @@
 node_modules
+/yarn-error.log
 *.js
 *.js.flow
-!src/*.js
-!src/*/*.js
-!test/*.js
+!/flow-typed/**/*.js
+!/src/**/*.js
+!/test/**/*.js
