@@ -1,3 +1,6 @@
+// @flow
+import {it} from 'mocha';
+
 import * as fake from '../src'
 
 it('works', function() {
@@ -24,7 +27,7 @@ it('works', function() {
 
   fake.foodhub()
   fake.foodhub.slug()
-  
+
   fake.date()
   fake.day()
   fake.tzid()
