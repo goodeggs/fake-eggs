@@ -1,9 +1,9 @@
 // @flow
 
-import randomArrayElement from '../random_array_element';
+import sample from '../sample';
 
-export default function tzid(): string {
-  return randomArrayElement(tzids);
+export default function tzid (): string {
+  return sample(tzids);
 }
 
 const tzids = [

@@ -1,24 +1,15 @@
 // @flow
-import randomArrayElement from '../random_array_element';
+import sample from '../sample';
 import slugify from '../slugify';
 
-export default function producer(): {
-  name: string,
-  slug: string,
-} {
-  var name = producer._name()
-  return {
-    name: name,
-    slug: producer.slug(name)
-  }
+export default {name, slug};
+
+function name (): string {
+  return sample(producerNames);
 }
 
-producer._name = function(): string {
-  return randomArrayElement(producerNames);
-}
-
-producer.slug = function(name?: string): string {
-  return slugify(name || producer._name())
+function slug (nameArg?: string): string {
+  return slugify(nameArg || name());
 }
 
 const producerNames = [

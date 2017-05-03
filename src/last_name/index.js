@@ -1,9 +1,9 @@
 // @flow
 
-import randomArrayElement from '../random_array_element';
+import sample from '../sample';
 
 export default function lastName(): string {
-  return randomArrayElement(lastNames);
+  return sample(lastNames);
 }
 
 const lastNames = [

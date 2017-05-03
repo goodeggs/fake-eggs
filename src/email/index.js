@@ -1,10 +1,13 @@
 // @flow
 
-import randomArrayElement from '../random_array_element';
+import sample from '../sample';
 
-export default function email(username?: string, domain?: string): string {
-  if (username == null) username = randomArrayElement(usernames)
-  if (domain == null) domain = randomArrayElement(domains)
+export default function email (options?: {username?: string, domain?: string} = {}): string {
+  let {username, domain} = options;
+  if (username == null)
+    username = sample(usernames)
+  if (domain == null)
+    domain = sample(domains)
   return `${username}@${domain}`
 }
 

@@ -1,8 +1,8 @@
 // @flow
 
 import _ from 'lodash';
-import randomDigit from '../random_digit';
+import digit from '../digit';
 
 export default function phoneNumber(): string {
-  return `+1555${_.times(7, randomDigit).join('')}`;
+  return `+1555${_.times(7, digit).join('')}`;
 }
