@@ -3,7 +3,7 @@ import boolean from './boolean';
 import string from './string';
 import number from './number';
 import maybe from './maybe';
-import integerInRange from './integer_in_range';
+import integer from './integer';
 import sample from './sample';
 import digit from './digit';
 import date from './date';
@@ -29,7 +29,7 @@ export default {
   maybe,
   date,
   sample,
-  integerInRange,
+  integer,
   digit,
   day,
   tzid,

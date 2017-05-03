@@ -3,7 +3,7 @@
 import _ from 'lodash';
 
 import date from '../date';
-import integerInRange from '../integer_in_range';
+import integer from '../integer';
 
 export default function objectId({
   timestamp,
@@ -26,9 +26,9 @@ export default function objectId({
   const COUNTER_BYTES = 3;
   
   if (timestamp == null) timestamp = date(from, to);
-  if (machineId == null) machineId = integerInRange(0, maxNumberGivenByteCount(MACHINE_ID_BYTES));
-  if (processId == null) processId = integerInRange(0, maxNumberGivenByteCount(PROCESS_ID_BYTES));
-  if (counter == null) counter = integerInRange(0, maxNumberGivenByteCount(COUNTER_BYTES));
+  if (machineId == null) machineId = integer(0, maxNumberGivenByteCount(MACHINE_ID_BYTES));
+  if (processId == null) processId = integer(0, maxNumberGivenByteCount(PROCESS_ID_BYTES));
+  if (counter == null) counter = integer(0, maxNumberGivenByteCount(COUNTER_BYTES));
   
   return [
     getHexString(new Date(timestamp).valueOf() / 1000, TIMESTAMP_BYTES),

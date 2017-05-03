@@ -20,7 +20,7 @@ fake.date(); // => Date<Fri Nov 29 2013 15:42:37 GMT-0800 (PST)>
 fake.day(); // => '2014-06-27'
 fake.tzid(); // => 'America/Los_Angeles'
 fake.objectId(); // => '55bcc51317b1afb4bc174ccc'
-fake.integerInRange(1, 30); // => 17
+fake.integer(); // => 17
 fake.digit(); // => 4
 fake.uri(); // => 'https://7wr6_.goodeggs.com/k/ok'
 

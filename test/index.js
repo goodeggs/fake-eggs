@@ -30,7 +30,7 @@ it('works', function() {
   fake.day();
   fake.tzid();
   fake.objectId();
-  fake.integerInRange(1, 10);
+  fake.integer();
   fake.sample(['a','b','c']);
   fake.digit();
   fake.string();
