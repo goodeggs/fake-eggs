@@ -1,6 +1,6 @@
 // @flow
 import sample from '../sample';
-import integerInRange from '../integer_in_range';
+import integer from '../integer';
 
 export default {name, unit, count};
 
@@ -13,7 +13,7 @@ function unit (): string {
 }
 
 function count (): number {
-  return integerInRange(1, 100);
+  return integer(1, 100);
 }
 
 const productNames = [

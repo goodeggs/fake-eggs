@@ -4,7 +4,7 @@ import _ from 'lodash';
 
 import sample from '../sample';
 import string from '../string';
-import integerInRange from '../integer_in_range';
+import integer from '../integer';
 
 export default function uri (domain?: string = 'goodeggs.com'): string {
   const uriCharset = 'abcdefghijklmnopqrstuvwxyz_1234567890';
@@ -12,12 +12,12 @@ export default function uri (domain?: string = 'goodeggs.com'): string {
     sample(['http', 'https']),
     '://',
     sample([
-      `${string(integerInRange(1, 7), uriCharset)}.`,
+      `${string(integer(1, 7), uriCharset)}.`,
       '']),
     domain,
     '/',
-    _.times(integerInRange(1,5), () =>
-      string(integerInRange(1, 8), uriCharset)
+    _.times(integer(1,5), () =>
+      string(integer(1, 8), uriCharset)
     ).join('/')
   ].join('');
 }
