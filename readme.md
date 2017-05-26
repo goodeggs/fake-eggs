@@ -50,6 +50,13 @@ fake.product.name(); // => 'Large Brown Pastured Eggs'
 fake.product.unit(); // => 'oz'
 fake.product.count(); // => 45
 fake.product.storageType(); // => frozen
+
+// warehouseLocation
+fake.warehouseLocation.zone(); // => chill
+fake.warehouseLocation.aisle(); // => 'K'
+fake.warehouseLocation.rack(); // => '17'
+fake.warehouseLocation.shelf(); // => '3'
+fake.warehouseLocation.label(); // 'cP12-1'
 ```
 
 ## Contributing

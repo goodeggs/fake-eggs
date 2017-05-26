@@ -23,6 +23,12 @@ it('works', function() {
   fake.product.storageType();
 
   fake.foodhub.slug();
+  
+  fake.warehouseLocation.zone();
+  fake.warehouseLocation.aisle();
+  fake.warehouseLocation.rack();
+  fake.warehouseLocation.shelf();
+  fake.warehouseLocation.label();
 
   fake.maybe(fake.boolean());
   fake.boolean();

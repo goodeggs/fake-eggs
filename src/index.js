@@ -21,6 +21,7 @@ import employee from './employee';
 import producer from './producer';
 import product from './product';
 import foodhub from './foodhub';
+import warehouseLocation from './warehouse_location';
 
 export default {
   boolean,
@@ -45,4 +46,5 @@ export default {
   producer,
   product,
   foodhub,
+  warehouseLocation,
 }
