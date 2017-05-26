@@ -1,52 +1,54 @@
 // @flow
+import array from './array';
 import boolean from './boolean';
-import string from './string';
-import number from './number';
-import maybe from './maybe';
-import integer from './integer';
-import sample from './sample';
-import digit from './digit';
+import customer from './customer';
 import date from './date';
 import day from './day';
-import tzid from './tzid';
-import uri from './uri';
-import objectId from './object_id';
-import firstName from './first_name';
-import lastName from './last_name';
-import phoneNumber from './phone_number';
+import digit from './digit';
 import email from './email';
-import fullName from './full_name';
-import customer from './customer';
 import employee from './employee';
+import firstName from './first_name';
+import foodhub from './foodhub';
+import fullName from './full_name';
+import integer from './integer';
+import inventoryLot from './inventory_lot';
+import lastName from './last_name';
+import maybe from './maybe';
+import number from './number';
+import objectId from './object_id';
+import phoneNumber from './phone_number';
 import producer from './producer';
 import product from './product';
-import foodhub from './foodhub';
+import sample from './sample';
+import string from './string';
+import tzid from './tzid';
+import uri from './uri';
 import warehouseLocation from './warehouse_location';
-import inventoryLot from './inventory_lot';
 
 export default {
+  array,
   boolean,
-  string,
-  number,
-  maybe,
-  date,
-  sample,
-  integer,
-  digit,
-  day,
-  tzid,
-  uri,
-  objectId,
-  firstName,
-  lastName,
-  phoneNumber,
-  email,
-  fullName,
   customer,
+  date,
+  day,
+  digit,
+  email,
   employee,
+  firstName,
+  foodhub,
+  fullName,
+  integer,
+  inventoryLot,
+  lastName,
+  maybe,
+  number,
+  objectId,
+  phoneNumber,
   producer,
   product,
-  foodhub,
+  sample,
+  string,
+  tzid,
+  uri,
   warehouseLocation,
-  inventoryLot,
 }

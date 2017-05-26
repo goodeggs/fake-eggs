@@ -13,6 +13,7 @@ fake.boolean(); // => true
 fake.string(); // => 'sKvWhsJLnySpbAtxHSPpgCpCzEHV'
 fake.number(); // => -32.1
 fake.maybe(fake.boolean()); // => boolean, null, or undefined
+fake.array(0, 3, fake.boolean); // => [false, true] (first two arguments are range of array size, lower inclusive and upper exclusive. last argument should be a function that generates elements.)
 
 // utilities
 fake.sample(['a','b','c']); // => 'b'
