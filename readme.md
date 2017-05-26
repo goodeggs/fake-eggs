@@ -57,6 +57,9 @@ fake.warehouseLocation.aisle(); // => 'K'
 fake.warehouseLocation.rack(); // => '17'
 fake.warehouseLocation.shelf(); // => '3'
 fake.warehouseLocation.label(); // 'cP12-1'
+
+// inventoryLot
+fake.inventoryLot.label(); // => 'DE21'
 ```
 
 ## Contributing

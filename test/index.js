@@ -29,6 +29,8 @@ it('works', function() {
   fake.warehouseLocation.rack();
   fake.warehouseLocation.shelf();
   fake.warehouseLocation.label();
+  
+  fake.inventoryLot.label();
 
   fake.maybe(fake.boolean());
   fake.boolean();

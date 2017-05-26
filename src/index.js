@@ -22,6 +22,7 @@ import producer from './producer';
 import product from './product';
 import foodhub from './foodhub';
 import warehouseLocation from './warehouse_location';
+import inventoryLot from './inventory_lot';
 
 export default {
   boolean,
@@ -47,4 +48,5 @@ export default {
   product,
   foodhub,
   warehouseLocation,
+  inventoryLot,
 }
