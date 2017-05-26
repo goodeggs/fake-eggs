@@ -2,7 +2,7 @@
 import sample from '../sample';
 import integer from '../integer';
 
-export default {name, unit, count};
+export default {name, unit, count, storageType};
 
 function name (): string {
   return sample(productNames);
@@ -10,6 +10,10 @@ function name (): string {
 
 function unit (): string {
   return sample(productUnits);
+}
+
+function storageType (): string {
+  return sample(storageTypes);
 }
 
 function count (): number {
@@ -6674,7 +6678,7 @@ const productNames = [
   "Organic & Biodynamic D'Anjou Pear Duo",
   "Papa (Large) Smoked Salt Almond Chocolate Bars",
   "Porterhouse Steak (Fresh)",
-  "Savory Paleo Waffles (Frozen)"
+  "Savory Paleo Waffles (Frozen)",
 ];
 
 const productUnits = [
@@ -6693,5 +6697,14 @@ const productUnits = [
   "half dozen",
   "bunch",
   "head",
-  "inch"
+  "inch",
+];
+
+const storageTypes = [
+  "chill",
+  "dry",
+  "flowers",
+  "frozen",
+  "produce",
+  "virtual",
 ];

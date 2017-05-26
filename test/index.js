@@ -20,6 +20,7 @@ it('works', function() {
   fake.product.name();
   fake.product.unit();
   fake.product.count();
+  fake.product.storageType();
 
   fake.foodhub.slug();
 

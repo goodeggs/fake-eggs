@@ -49,6 +49,7 @@ fake.producer.slug(); // => 'pork-r-us'
 fake.product.name(); // => 'Large Brown Pastured Eggs'
 fake.product.unit(); // => 'oz'
 fake.product.count(); // => 45
+fake.product.storageType(); // => frozen
 ```
 
 ## Contributing
