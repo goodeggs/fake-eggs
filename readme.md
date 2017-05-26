@@ -12,7 +12,7 @@ var fake = require('fake-eggs');
 fake.boolean(); // => true
 fake.string(); // => 'sKvWhsJLnySpbAtxHSPpgCpCzEHV'
 fake.number(); // => -32.1
-fake.maybe(fake.boolean()); // => boolean, null, or undefined
+fake.maybe(fake.boolean); // => boolean, null, or undefined (takes a function that generates an element)
 fake.array(0, 3, fake.boolean); // => [false, true] (first two arguments are range of array size, lower inclusive and upper exclusive. last argument should be a function that generates elements.)
 
 // utilities

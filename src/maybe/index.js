@@ -1,6 +1,15 @@
 // @flow
 import sample from '../sample';
 
-export default function maybe <T> (value: T): ?T {
-  return sample([undefined, null, value]);
+const returnUndefined = () => undefined;
+const returnNull = () => null;
+
+export default function maybe <T> (returnValue: () => T): ?T {
+  const getter = sample([
+    returnUndefined,
+    returnNull,
+    returnValue,
+  ]);
+  
+  return getter();
 }

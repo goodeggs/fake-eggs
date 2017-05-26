@@ -32,7 +32,7 @@ it('works', function() {
   
   fake.inventoryLot.label();
 
-  fake.maybe(fake.boolean());
+  fake.maybe(fake.boolean);
   fake.array(0, 2, fake.boolean);
   fake.boolean();
   fake.number();
