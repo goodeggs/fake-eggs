@@ -6,7 +6,9 @@
   "scripts": {
     "build": "babel src -d . && flow-copy-source src .",
     "prepublishOnly": "npm run build",
-    "test": "flow && mocha"
+    "test": "flow && npm run test:mocha",
+    "test:mocha": "mocha --compilers js:babel-register src/test.js src/**/test.js",
+    "test:watch": "npm run test:mocha -- --watch"
   },
   "repository": {
     "type": "git",
@@ -16,7 +18,7 @@
     "convert",
     "unit"
   ],
-  "author": "Max Edmands",
+  "author": "Good Eggs Inc.",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/goodeggs/fake-eggs/issues"
