@@ -35,7 +35,7 @@
     "babel-register": "6.3.13",
     "flow-bin": "0.63.1",
     "flow-copy-source": "1.1.0",
-    "goodeggs-test-helpers": "^2.0.0",
+    "goodeggs-test-helpers": "2.0.0",
     "mocha": "4.1.0"
   },
   "publishConfig": {
