@@ -1,6 +1,6 @@
 // @flow
 import {describe, it} from 'mocha';
-import {expect} from 'goodeggs-test-helpers/chai';
+import {expect} from 'goodeggs-test-helpers';
 
 import fake from '../src'
 
