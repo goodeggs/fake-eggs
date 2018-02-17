@@ -789,19 +789,19 @@ center-align@^0.1.1:
     align-text "^0.1.3"
     lazy-cache "^1.0.3"
 
-chai-as-promised@^7.1.1:
+chai-as-promised@7.1.1:
   version "7.1.1"
   resolved "https://registry.yarnpkg.com/chai-as-promised/-/chai-as-promised-7.1.1.tgz#08645d825deb8696ee61725dbf590c012eb00ca0"
   dependencies:
     check-error "^1.0.2"
 
-chai-datetime@^1.5.0:
+chai-datetime@1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/chai-datetime/-/chai-datetime-1.5.0.tgz#3742f18b024c75b76a2b7eee291662324467596c"
   dependencies:
     chai ">1.9.0"
 
-chai@>1.9.0, chai@^4.1.2:
+chai@4.1.2, chai@>1.9.0:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/chai/-/chai-4.1.2.tgz#0f64584ba642f0f2ace2806279f4f06ca23ad73c"
   dependencies:
@@ -812,9 +812,9 @@ chai@>1.9.0, chai@^4.1.2:
     pathval "^1.0.0"
     type-detect "^4.0.0"
 
-chaid@^1.0.2:
+chaid@1.0.2:
   version "1.0.2"
-  resolved "https://registry.npmjs.org/chaid/-/chaid-1.0.2.tgz#f58e94360528abdaa46acf0b3a5174a06e157750"
+  resolved "https://registry.yarnpkg.com/chaid/-/chaid-1.0.2.tgz#f58e94360528abdaa46acf0b3a5174a06e157750"
 
 chalk@1.1.1, chalk@^1.0.0, chalk@^1.1.0:
   version "1.1.1"
@@ -980,7 +980,7 @@ dashdash@^1.12.0:
   dependencies:
     assert-plus "^1.0.0"
 
-date-test-helpers@^1.1.2:
+date-test-helpers@1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/date-test-helpers/-/date-test-helpers-1.1.2.tgz#0e8f61cedffb193d7673163299f703074e6ffaee"
   dependencies:
@@ -1058,7 +1058,7 @@ diff@3.3.1, diff@^3.1.0:
   version "3.3.1"
   resolved "https://registry.npmjs.org/diff/-/diff-3.3.1.tgz#aa8567a6eed03c531fc89d3f711cd0e5259dec75"
 
-dirty-chai@^2.0.1:
+dirty-chai@2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/dirty-chai/-/dirty-chai-2.0.1.tgz#6b2162ef17f7943589da840abc96e75bda01aff3"
 
@@ -1390,21 +1390,21 @@ globals@^9.18.0:
   version "9.18.0"
   resolved "https://registry.npmjs.org/globals/-/globals-9.18.0.tgz#aa3896b3e69b487f17e31ed2143d69a8e30c2d8a"
 
-goodeggs-test-helpers@4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/goodeggs-test-helpers/-/goodeggs-test-helpers-4.0.2.tgz#a6c5174cbbcc154710c7a7b0162f8bb0b88a6113"
+goodeggs-test-helpers@5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/goodeggs-test-helpers/-/goodeggs-test-helpers-5.0.0.tgz#3082f6b4762ee9dcb6865fba955e0fa059d83cf3"
   dependencies:
-    chai "^4.1.2"
-    chai-as-promised "^7.1.1"
-    chai-datetime "^1.5.0"
-    chaid "^1.0.2"
-    date-test-helpers "^1.1.2"
-    dirty-chai "^2.0.1"
-    istanbul "^1.0.0-alpha.2"
-    mocha-multi "^1.0.0"
-    mocha-osx-reporter "^0.1.2"
-    sinon "^4.2.2"
-    sinon-chai "^2.14.0"
+    chai "4.1.2"
+    chai-as-promised "7.1.1"
+    chai-datetime "1.5.0"
+    chaid "1.0.2"
+    date-test-helpers "1.1.2"
+    dirty-chai "2.0.1"
+    istanbul "1.0.0-alpha.2"
+    mocha-multi "1.0.0"
+    mocha-osx-reporter "0.1.2"
+    sinon "4.2.2"
+    sinon-chai "2.14.0"
 
 graceful-fs@^4.1.2, graceful-fs@^4.1.4, graceful-fs@^4.1.6:
   version "4.1.11"
@@ -1813,7 +1813,7 @@ istanbul-reports@^1.1.3:
   dependencies:
     handlebars "^4.0.3"
 
-istanbul@^1.0.0-alpha.2:
+istanbul@1.0.0-alpha.2:
   version "1.0.0-alpha.2"
   resolved "https://registry.yarnpkg.com/istanbul/-/istanbul-1.0.0-alpha.2.tgz#06096bc08e98baad744aae46962d8df9fac63d08"
   dependencies:
@@ -2129,7 +2129,7 @@ mkdirp@0.5.1, mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.1:
   dependencies:
     minimist "0.0.8"
 
-mocha-multi@^1.0.0:
+mocha-multi@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/mocha-multi/-/mocha-multi-1.0.0.tgz#c314da8b5c8ae982ef6c59012d960f0d53762688"
   dependencies:
@@ -2139,7 +2139,7 @@ mocha-multi@^1.0.0:
     mkdirp "^0.5.1"
     object-assign "^4.1.1"
 
-mocha-osx-reporter@^0.1.2:
+mocha-osx-reporter@0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/mocha-osx-reporter/-/mocha-osx-reporter-0.1.2.tgz#95a832dae3e632871c0080dab83768a343c775f6"
   dependencies:
@@ -2738,11 +2738,11 @@ signal-exit@^3.0.0:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
 
-sinon-chai@^2.14.0:
+sinon-chai@2.14.0:
   version "2.14.0"
   resolved "https://registry.yarnpkg.com/sinon-chai/-/sinon-chai-2.14.0.tgz#da7dd4cc83cd6a260b67cca0f7a9fdae26a1205d"
 
-sinon@^4.2.2:
+sinon@4.2.2:
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/sinon/-/sinon-4.2.2.tgz#e039ab27bdb426fc61363c380726e996a2e2c620"
   dependencies:
