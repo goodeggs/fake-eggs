@@ -6,7 +6,11 @@ import sample from '../sample';
 import string from '../string';
 import integer from '../integer';
 
-export default function uri (domain?: string = 'goodeggs.com'): string {
+/**
+   * Generate a random URI, e.g., `https://adl2j.goodeggs.com/ax/faj23`
+ * @param {*} domain 
+ */
+function uri (domain?: string = 'goodeggs.com'): string {
   const uriCharset = 'abcdefghijklmnopqrstuvwxyz_1234567890';
   return [
     sample(['http', 'https']),
@@ -21,3 +25,5 @@ export default function uri (domain?: string = 'goodeggs.com'): string {
     ).join('/')
   ].join('');
 }
+
+export default uri;

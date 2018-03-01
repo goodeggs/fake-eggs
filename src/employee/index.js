@@ -15,6 +15,10 @@ export default {
   email: _email,
 };
 
+/**
+ * Returns a randomly-selected email address at goodeggs.com of the form `randall.munroe@goodeggs.com`.
+ * You can override `firstName` and `lastName` by providing appropriate options.
+ */
 function _email (options?: {firstName?: string, lastName?: string} = {}): string {
   let {firstName, lastName} = options;
   if (firstName == null)

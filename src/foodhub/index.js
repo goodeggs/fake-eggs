@@ -2,6 +2,9 @@
 
 import sample from '../sample';
 
+/**
+ * Returns a randomly-selected foodhub slug, e.g. `sfbay`.
+*/
 function slug (): string {
   return sample(foodhubSlugs);
 }

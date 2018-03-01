@@ -1,9 +1,14 @@
 // @flow
 import sample from '../sample';
 
-export default function firstName(): string {
+/**
+* Returns a randomly-selected first name, e.g. `Carter`.
+*/
+function firstName(): string {
   return sample(firstNames);
 }
+
+export default firstName;
 
 const firstNames = [
   "Aja",

@@ -1,6 +1,12 @@
 // @flow
 import _ from 'lodash';
 
-export default function sample <T> (array: Array<T>): T {
+/**
+ * Chooses one of the elements of the provided `array`.
+ */
+
+function sample <T> (array: Array<T>): T {
   return _.sample(array);
 }
+
+export default sample;

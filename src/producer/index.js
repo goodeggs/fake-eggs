@@ -4,10 +4,17 @@ import slugify from '../slugify';
 
 export default {name, slug};
 
+/**
+ * Generates a random producer name, e.g., `Bahringer`.
+*/
 function name (): string {
   return sample(producerNames);
 }
 
+/**
+ * Generates a random producer slug, e.g., `anderson`.
+ * Optionally can override with an explicit name to generate from.
+ */
 function slug (nameArg?: string): string {
   return slugify(nameArg || name());
 }

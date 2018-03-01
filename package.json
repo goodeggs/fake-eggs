@@ -4,11 +4,12 @@
   "description": "Generate Good Eggs-flavored data for development / test fixtures",
   "main": "index.js",
   "scripts": {
-    "build": "babel src -d . && flow-copy-source src .",
+    "build": "npm run docs && babel src -d . && flow-copy-source src .",
     "prepublishOnly": "npm run build",
     "test": "flow && npm run test:mocha",
     "test:mocha": "mocha --compilers js:babel-register src/test.js src/**/test.js",
-    "test:watch": "npm run test:mocha -- --watch"
+    "test:watch": "npm run test:mocha -- --watch",
+    "docs": "babel-node ./scripts/generate_documentation"
   },
   "repository": {
     "type": "git",
@@ -33,6 +34,7 @@
     "babel-preset-es2015": "6.3.13",
     "babel-preset-flow": "6.23.0",
     "babel-register": "6.3.13",
+    "babylon": "^6.18.0",
     "flow-bin": "0.66.0",
     "flow-copy-source": "1.3.0",
     "goodeggs-test-helpers": "4.0.2",

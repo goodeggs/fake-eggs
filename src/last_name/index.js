@@ -2,9 +2,14 @@
 
 import sample from '../sample';
 
-export default function lastName(): string {
+/**
+ * Generates a random last name, e.g., `Armstrong`.
+*/
+function lastName(): string {
   return sample(lastNames);
 }
+
+export default lastName;
 
 const lastNames = [
   "Abbott",

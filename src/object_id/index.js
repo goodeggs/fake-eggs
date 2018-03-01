@@ -5,7 +5,10 @@ import _ from 'lodash';
 import date from '../date';
 import integer from '../integer';
 
-export default function objectId({
+/**
+ * Generates a random mongodb-friendly objectId string.
+ */
+function objectId({
   timestamp,
   from,
   to,
@@ -51,3 +54,4 @@ function maxNumberGivenByteCount(byteCount: number): number {
   return Math.pow(256, byteCount);
 }
 
+export default objectId;

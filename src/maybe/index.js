@@ -4,7 +4,10 @@ import sample from '../sample';
 const returnUndefined = () => undefined;
 const returnNull = () => null;
 
-export default function maybe <T> (returnValue: () => T): ?T {
+/**
+ * Potentially returns `null`, `undefined`, or the result of the supplied `returnValue` function.
+ */
+function maybe <T> (returnValue: () => T): ?T {
   const getter = sample([
     returnUndefined,
     returnNull,
@@ -13,3 +16,5 @@ export default function maybe <T> (returnValue: () => T): ?T {
   
   return getter();
 }
+
+export default maybe;
