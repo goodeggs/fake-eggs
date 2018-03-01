@@ -21,28 +21,6 @@ fake.employee.email(); // => 'rylee.mayert@goodeggs.com
 
 <!-- automatically generated documentation starts here. -->
 
-#### `fake.factory`
-
-`any`
-
-Makes a function that can build up arbitrary objects. For example:
-```js
-const recipeCreator = fake.factory({
-_id: fake.objectId,
-name: fake.string,
-photo: fake.uri,
-});
-const recipe = recipeCreator({name: 'Sponge Cake'});
-// => {
-//      _id: '5153d879dcc2d3e27e689de6',
-//      name: 'Sponge Cake',
-//      photo: 'http://u6.goodeggs.com/h4mko8c/61n6ut5/c3nr9',
-//    }
-```
-
-<small>[[view source]](src/factory/index.js#L22-L33)</small>
-
-  
 #### `fake.array`
 
 `<T>(lengthLowerInclusive: number, lengthUpperExclusive: number, generator: () => T) => T[]`
