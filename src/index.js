@@ -24,8 +24,10 @@ import string from './string';
 import tzid from './tzid';
 import uri from './uri';
 import warehouseLocation from './warehouse_location';
+import factory from './factory';
 
 export default {
+  factory,
   array,
   boolean,
   customer,
