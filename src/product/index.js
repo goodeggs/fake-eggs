@@ -4,18 +4,30 @@ import integer from '../integer';
 
 export default {name, unit, count, storageType};
 
+/**
+ * Generates a random product name, e.g. `Hargrand Apricots`.
+*/
 function name (): string {
   return sample(productNames);
 }
 
+/**
+ * Generates a random product unit, e.g. `count`.
+*/
 function unit (): string {
   return sample(productUnits);
 }
 
+/**
+ * Generates a random storage type, e.g., `chill`.
+*/
 function storageType (): string {
   return sample(storageTypes);
 }
 
+/**
+ * Generates a random product count, e.g., `31`.
+*/
 function count (): number {
   return integer(1, 100);
 }

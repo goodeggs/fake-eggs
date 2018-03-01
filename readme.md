@@ -1,69 +1,402 @@
 # fake-eggs
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/goodeggs/fake-eggs.svg)](https://greenkeeper.io/)
 Providing you with all sorts of Good Eggs-style fake data!
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/goodeggs/fake-eggs.svg)](https://greenkeeper.io/)
 
 All exported functions are stateless (meaning you don't have to worry about binding to `this`).
 
 ## Examples
 
 ```javascript
-var fake = require('fake-eggs');
+import fake from 'fake-eggs';
 
-// primitives
 fake.boolean(); // => true
-fake.string(); // => 'sKvWhsJLnySpbAtxHSPpgCpCzEHV'
-fake.number(); // => -32.1
-fake.maybe(fake.boolean); // => boolean, null, or undefined (takes a function that generates an element)
-fake.array(0, 3, fake.boolean); // => [false, true] (first two arguments are range of array size, lower inclusive and upper exclusive. last argument should be a function that generates elements.)
-
-// utilities
-fake.sample(['a','b','c']); // => 'b'
-fake.date(); // => Date<Fri Nov 29 2013 15:42:37 GMT-0800 (PST)>
-fake.day(); // => '2014-06-27'
-fake.tzid(); // => 'America/Los_Angeles'
-fake.objectId(); // => '55bcc51317b1afb4bc174ccc'
-fake.integer(); // => 17
-fake.digit(); // => 4
-fake.uri(); // => 'https://7wr6_.goodeggs.com/k/ok'
-
-// foodhub
-fake.foodhub.slug(); // => 'la'
-
-// customer
-fake.customer.firstName(); // => 'Kelis'
-fake.customer.lastName(); // => 'Bongio'
-fake.customer.fullName(); // => 'Rey Maggio'
-fake.customer.phoneNumber(); // => '+15557251925'
-fake.customer.email(); // 'acutevenerated@gmail.com'
-
-// employee
-fake.employee.firstName(); // => 'Joni'
-fake.employee.lastName(); // => 'Wu'
-fake.employee.phoneNumber(); // => '+15555609968'
-fake.employee.email(); // => 'rylee.mayert@goodeggs.com'
-fake.employee.fullName();  // => 'Joni Wu'
-
-// producer
-fake.producer.name(); // => 'Sand Hill Bakery'
-fake.producer.slug(); // => 'pork-r-us'
-
-// product
-fake.product.name(); // => 'Large Brown Pastured Eggs'
-fake.product.unit(); // => 'oz'
-fake.product.count(); // => 45
-fake.product.storageType(); // => frozen
-
-// warehouseLocation
-fake.warehouseLocation.zone(); // => chill
-fake.warehouseLocation.aisle(); // => 'K'
-fake.warehouseLocation.rack(); // => '17'
-fake.warehouseLocation.shelf(); // => '3'
-fake.warehouseLocation.label(); // 'cP12-1'
-
-// inventoryLot
-fake.inventoryLot.label(); // => 'DE21'
+fake.sample(['a','b','c']); // => 'b
+fake.uri(); // => 'https://7wr6_.goodeggs.com/k/ok
+fake.employee.email(); // => 'rylee.mayert@goodeggs.com
 ```
+
+## API
+
+<!-- automatically generated documentation starts here. -->
+
+#### `fake.array`
+
+`<T>(lengthLowerInclusive: number, lengthUpperExclusive: number, generator: () => T) => T[]`
+
+Calls supplied `generator` function to return an array of length `lengthLowerInclusive` and `lengthUpperInclusive`.
+
+<small>[[view source]](src/array/index.js#L9-L11)</small>
+
+  
+#### `fake.boolean`
+
+`() => boolean`
+
+Returns `true` or `false`, chosen at random.
+
+<small>[[view source]](src/boolean/index.js#L7-L9)</small>
+
+  
+#### `fake.customer.firstName`
+
+`() => string`
+
+Returns a randomly-selected first name, e.g. `Carter`.
+
+<small>[[view source]](src/first_name/index.js#L7-L9)</small>
+
+  
+#### `fake.customer.lastName`
+
+`() => string`
+
+Generates a random last name, e.g., `Armstrong`.
+
+<small>[[view source]](src/last_name/index.js#L8-L10)</small>
+
+  
+#### `fake.customer.phoneNumber`
+
+`() => string`
+
+Generates a random phone number, e.g. `+15556797779`.
+
+<small>[[view source]](src/phone_number/index.js#L9-L11)</small>
+
+  
+#### `fake.customer.fullName`
+
+`(firstName?: string, lastName?: string) => string`
+
+Randomly generates a full name, e.g., `Randall Munroe`. `firstName` and `lastName` can optionally be overridden.
+
+<small>[[view source]](src/full_name/index.js#L8-L12)</small>
+
+  
+#### `fake.customer.email`
+
+`(options?: {domain?: string, username?: string}) => string`
+
+Returns a randomly-selected email address string (e.g., `dualityhiss@icicle.net`).
+You can override either portion of the email with `username` and `domain` options.
+
+<small>[[view source]](src/email/index.js#L9-L16)</small>
+
+  
+#### `fake.date`
+
+`(from?: (Date | string), to?: (Date | string)) => Date`
+
+Returns a randomly-selected `Date`, optionally between `from` and `to`.
+
+<small>[[view source]](src/date/index.js#L12-L23)</small>
+
+  
+#### `fake.day`
+
+`(from?: (Date | string), to?: (Date | string)) => string`
+
+Returns a randomly-selected day string (`YYYY-MM-DD`), optionally between `from` and `to`.
+
+<small>[[view source]](src/day/index.js#L10-L16)</small>
+
+  
+#### `fake.digit`
+
+`() => number`
+
+Returns a randomly-selected digit (integer between 0 and 9).
+
+<small>[[view source]](src/digit/index.js#L7-L7)</small>
+
+  
+#### `fake.email`
+
+`(options?: {domain?: string, username?: string}) => string`
+
+Returns a randomly-selected email address string (e.g., `dualityhiss@icicle.net`).
+You can override either portion of the email with `username` and `domain` options.
+
+<small>[[view source]](src/email/index.js#L9-L16)</small>
+
+  
+#### `fake.employee.firstName`
+
+`() => string`
+
+Returns a randomly-selected first name, e.g. `Carter`.
+
+<small>[[view source]](src/first_name/index.js#L7-L9)</small>
+
+  
+#### `fake.employee.lastName`
+
+`() => string`
+
+Generates a random last name, e.g., `Armstrong`.
+
+<small>[[view source]](src/last_name/index.js#L8-L10)</small>
+
+  
+#### `fake.employee.phoneNumber`
+
+`() => string`
+
+Generates a random phone number, e.g. `+15556797779`.
+
+<small>[[view source]](src/phone_number/index.js#L9-L11)</small>
+
+  
+#### `fake.employee.fullName`
+
+`(firstName?: string, lastName?: string) => string`
+
+Randomly generates a full name, e.g., `Randall Munroe`. `firstName` and `lastName` can optionally be overridden.
+
+<small>[[view source]](src/full_name/index.js#L8-L12)</small>
+
+  
+#### `fake.employee.email`
+
+`(options?: {firstName?: string, lastName?: string}) => string`
+
+Returns a randomly-selected email address at goodeggs.com of the form `randall.munroe@goodeggs.com`.
+You can override `firstName` and `lastName` by providing appropriate options.
+
+<small>[[view source]](src/employee/index.js#L22-L32)</small>
+
+  
+#### `fake.firstName`
+
+`() => string`
+
+Returns a randomly-selected first name, e.g. `Carter`.
+
+<small>[[view source]](src/first_name/index.js#L7-L9)</small>
+
+  
+#### `fake.foodhub.slug`
+
+`() => string`
+
+Returns a randomly-selected foodhub slug, e.g. `sfbay`.
+
+<small>[[view source]](src/foodhub/index.js#L8-L10)</small>
+
+  
+#### `fake.fullName`
+
+`(firstName?: string, lastName?: string) => string`
+
+Randomly generates a full name, e.g., `Randall Munroe`. `firstName` and `lastName` can optionally be overridden.
+
+<small>[[view source]](src/full_name/index.js#L8-L12)</small>
+
+  
+#### `fake.integer`
+
+`(lowerInclusive?: number, upperExclusive?: number) => number`
+
+Generates a random integer (could be negative!). Optionally between `lowerExclusive` and `upperExclusive`.
+
+<small>[[view source]](src/integer/index.js#L6-L10)</small>
+
+  
+#### `fake.inventoryLot.label`
+
+`() => string`
+
+Generates an inventory lot label, e.g., "F1A4"
+
+<small>[[view source]](src/inventory_lot/index.js#L8-L10)</small>
+
+  
+#### `fake.lastName`
+
+`() => string`
+
+Generates a random last name, e.g., `Armstrong`.
+
+<small>[[view source]](src/last_name/index.js#L8-L10)</small>
+
+  
+#### `fake.maybe`
+
+`<T>(returnValue: () => T) => ?T`
+
+Potentially returns `null`, `undefined`, or the result of the supplied `returnValue` function.
+
+<small>[[view source]](src/maybe/index.js#L10-L18)</small>
+
+  
+#### `fake.number`
+
+`(lowerInclusive?: number, upperExclusive?: number) => number`
+
+Generates a random `number`, optionally between `lowerInclusive` and `upperExclusive`.
+
+<small>[[view source]](src/number/index.js#L7-L12)</small>
+
+  
+#### `fake.objectId`
+
+`({+counter?: number, +from?: (string | Date), +machineId?: number, +processId?: number, +timestamp?: (string | Date | number), +to?: (string | Date)}) => string`
+
+Generates a random mongodb-friendly objectId string.
+
+<small>[[view source]](src/object_id/index.js#L11-L42)</small>
+
+  
+#### `fake.phoneNumber`
+
+`() => string`
+
+Generates a random phone number, e.g. `+15556797779`.
+
+<small>[[view source]](src/phone_number/index.js#L9-L11)</small>
+
+  
+#### `fake.producer.name`
+
+`() => string`
+
+Generates a random producer name, e.g., `Bahringer`.
+
+<small>[[view source]](src/producer/index.js#L10-L12)</small>
+
+  
+#### `fake.producer.slug`
+
+`(nameArg?: string) => string`
+
+Generates a random producer slug, e.g., `anderson`.
+Optionally can override with an explicit name to generate from.
+
+<small>[[view source]](src/producer/index.js#L18-L20)</small>
+
+  
+#### `fake.product.name`
+
+`() => string`
+
+Generates a random product name, e.g. `Hargrand Apricots`.
+
+<small>[[view source]](src/product/index.js#L10-L12)</small>
+
+  
+#### `fake.product.unit`
+
+`() => string`
+
+Generates a random product unit, e.g. `count`.
+
+<small>[[view source]](src/product/index.js#L17-L19)</small>
+
+  
+#### `fake.product.count`
+
+`() => number`
+
+Generates a random product count, e.g., `31`.
+
+<small>[[view source]](src/product/index.js#L31-L33)</small>
+
+  
+#### `fake.product.storageType`
+
+`() => string`
+
+Generates a random storage type, e.g., `chill`.
+
+<small>[[view source]](src/product/index.js#L24-L26)</small>
+
+  
+#### `fake.sample`
+
+`<T>(array: T[]) => T`
+
+Chooses one of the elements of the provided `array`.
+
+<small>[[view source]](src/sample/index.js#L8-L10)</small>
+
+  
+#### `fake.string`
+
+`(length?: number, charset?: string) => string`
+
+Generates a random string, optionally of `length` and using chars from provided `charset`.
+
+<small>[[view source]](src/string/index.js#L11-L16)</small>
+
+  
+#### `fake.tzid`
+
+`() => string`
+
+Generate a random tzid, e.g., `America/Denver`.
+
+<small>[[view source]](src/tzid/index.js#L8-L10)</small>
+
+  
+#### `fake.uri`
+
+`(domain?: string) => string`
+
+Generate a random URI, e.g., `https://adl2j.goodeggs.com/ax/faj23`
+@param {*} domain
+
+<small>[[view source]](src/uri/index.js#L13-L27)</small>
+
+  
+#### `fake.warehouseLocation.zone`
+
+`() => string`
+
+Returns a random zone, e.g. `chill`.
+
+<small>[[view source]](src/warehouse_location/index.js#L9-L11)</small>
+
+  
+#### `fake.warehouseLocation.aisle`
+
+`() => string`
+
+Returns a random aisle, e.g., `F`.
+
+<small>[[view source]](src/warehouse_location/index.js#L16-L18)</small>
+
+  
+#### `fake.warehouseLocation.rack`
+
+`() => string`
+
+Returns a random rack, e.g., `12`;
+
+<small>[[view source]](src/warehouse_location/index.js#L23-L25)</small>
+
+  
+#### `fake.warehouseLocation.shelf`
+
+`() => string`
+
+Returns a random shelf, e.g., `3`
+
+<small>[[view source]](src/warehouse_location/index.js#L30-L32)</small>
+
+  
+#### `fake.warehouseLocation.label`
+
+`() => string`
+
+Returns a location label for a warehouse location, e.g., `cF12-3`
+
+<small>[[view source]](src/warehouse_location/index.js#L37-L39)</small>
+
+  
+<!-- automatically generated documentation ends here. -->
+
 
 ## Contributing
 

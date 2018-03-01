@@ -1,6 +1,11 @@
 // @flow
 import sample from '../sample';
 
-export default function boolean (): boolean {
+/**
+* Returns `true` or `false`, chosen at random.
+*/
+function boolean (): boolean {
   return sample([true, false]);
 }
+
+export default boolean;

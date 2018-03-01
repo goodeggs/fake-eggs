@@ -2,7 +2,11 @@
 
 import sample from '../sample';
 
-export default function email (options?: {username?: string, domain?: string} = {}): string {
+/**
+ * Returns a randomly-selected email address string (e.g., `dualityhiss@icicle.net`).
+ * You can override either portion of the email with `username` and `domain` options.
+ */
+function email (options?: {username?: string, domain?: string} = {}): string {
   let {username, domain} = options;
   if (username == null)
     username = sample(usernames)
@@ -10,6 +14,8 @@ export default function email (options?: {username?: string, domain?: string} = 
     domain = sample(domains)
   return `${username}@${domain}`
 }
+
+export default email;
 
 const usernames = [
   "expandcostnest",

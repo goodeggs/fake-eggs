@@ -2,9 +2,14 @@
 
 import sample from '../sample';
 
-export default function tzid (): string {
+/**
+ * Generate a random tzid, e.g., `America/Denver`.
+ */
+function tzid (): string {
   return sample(tzids);
 }
+
+export default tzid;
 
 const tzids = [
   "America/Los_Angeles",

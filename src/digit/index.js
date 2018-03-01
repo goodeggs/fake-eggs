@@ -1,4 +1,9 @@
 // @flow
 import integer from '../integer';
 
-export default function digit () { return integer(0, 10) }
+/**
+Returns a randomly-selected digit (integer between 0 and 9).
+*/
+function digit () { return integer(0, 10) }
+
+export default digit;
