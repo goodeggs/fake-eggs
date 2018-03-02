@@ -23,14 +23,19 @@ fake.employee.email(); // => 'rylee.mayert@goodeggs.com
 
 #### `fake.factory`
 
-`any`
+`<T: Object>(defaults: DefaultCreatorsFor<T>) => Factory<T>`
 
-Makes a function that can build up arbitrary objects. For example:
+
+Makes a function that can build up arbitrary objects.
+For example:
+
 ```js
+import fake from 'fake-eggs';
+
 const recipeCreator = fake.factory({
-_id: fake.objectId,
-name: fake.string,
-photo: fake.uri,
+  _id: fake.objectId,
+  name: fake.string,
+  photo: fake.uri,
 });
 const recipe = recipeCreator({name: 'Sponge Cake'});
 // => {
@@ -40,14 +45,46 @@ const recipe = recipeCreator({name: 'Sponge Cake'});
 //    }
 ```
 
-<small>[[view source]](src/factory/index.js#L22-L33)</small>
+This function really shines if you're leveraging flow types. Here's an example:
+
+```js
+import fake from 'fake-eggs';
+import type {Factory} from 'fake-eggs/factory';
+
+type Recipe = {|
+  +_id: string,
+  +name: string,
+  +photo: string,
+|};
+
+const recipeCreator: Factory<Recipe> = fake.factory({
+  _id: fake.objectId,
+  name: fake.string,
+  photo: fake.uri,
+});
+const recipe = recipeCreator({name: 'Sponge Cake'});
+```
+
+In this case, flow will complain if:
+  - You include properties that are not present in the provided type
+  - You specify factory functions that don't match the provided type
+  - You include overridden properties that are not present in the provided type
+  - You include overridden properties that don't match the provided type
+
+Additionally, flow will understand that the resulting object created by the factory
+is of the provided type.
+ 
+
+<small>[[view source]](src/factory/index.js#L55-L66)</small>
 
   
 #### `fake.array`
 
 `<T>(lengthLowerInclusive: number, lengthUpperExclusive: number, generator: () => T) => T[]`
 
+
 Calls supplied `generator` function to return an array of length `lengthLowerInclusive` and `lengthUpperInclusive`.
+ 
 
 <small>[[view source]](src/array/index.js#L9-L11)</small>
 
@@ -56,7 +93,9 @@ Calls supplied `generator` function to return an array of length `lengthLowerInc
 
 `() => boolean`
 
+
 Returns `true` or `false`, chosen at random.
+
 
 <small>[[view source]](src/boolean/index.js#L7-L9)</small>
 
@@ -65,7 +104,9 @@ Returns `true` or `false`, chosen at random.
 
 `() => string`
 
+
 Returns a randomly-selected first name, e.g. `Carter`.
+
 
 <small>[[view source]](src/first_name/index.js#L7-L9)</small>
 
@@ -74,7 +115,9 @@ Returns a randomly-selected first name, e.g. `Carter`.
 
 `() => string`
 
+
 Generates a random last name, e.g., `Armstrong`.
+
 
 <small>[[view source]](src/last_name/index.js#L8-L10)</small>
 
@@ -83,7 +126,9 @@ Generates a random last name, e.g., `Armstrong`.
 
 `() => string`
 
+
 Generates a random phone number, e.g. `+15556797779`.
+
 
 <small>[[view source]](src/phone_number/index.js#L9-L11)</small>
 
@@ -92,7 +137,9 @@ Generates a random phone number, e.g. `+15556797779`.
 
 `(firstName?: string, lastName?: string) => string`
 
+
 Randomly generates a full name, e.g., `Randall Munroe`. `firstName` and `lastName` can optionally be overridden.
+ 
 
 <small>[[view source]](src/full_name/index.js#L8-L12)</small>
 
@@ -101,8 +148,10 @@ Randomly generates a full name, e.g., `Randall Munroe`. `firstName` and `lastNam
 
 `(options?: {domain?: string, username?: string}) => string`
 
+
 Returns a randomly-selected email address string (e.g., `dualityhiss@icicle.net`).
 You can override either portion of the email with `username` and `domain` options.
+ 
 
 <small>[[view source]](src/email/index.js#L9-L16)</small>
 
@@ -111,7 +160,9 @@ You can override either portion of the email with `username` and `domain` option
 
 `(from?: (Date | string), to?: (Date | string)) => Date`
 
+
 Returns a randomly-selected `Date`, optionally between `from` and `to`.
+ 
 
 <small>[[view source]](src/date/index.js#L12-L23)</small>
 
@@ -120,7 +171,9 @@ Returns a randomly-selected `Date`, optionally between `from` and `to`.
 
 `(from?: (Date | string), to?: (Date | string)) => string`
 
+
 Returns a randomly-selected day string (`YYYY-MM-DD`), optionally between `from` and `to`.
+ 
 
 <small>[[view source]](src/day/index.js#L10-L16)</small>
 
@@ -129,7 +182,9 @@ Returns a randomly-selected day string (`YYYY-MM-DD`), optionally between `from`
 
 `() => number`
 
+
 Returns a randomly-selected digit (integer between 0 and 9).
+
 
 <small>[[view source]](src/digit/index.js#L7-L7)</small>
 
@@ -138,8 +193,10 @@ Returns a randomly-selected digit (integer between 0 and 9).
 
 `(options?: {domain?: string, username?: string}) => string`
 
+
 Returns a randomly-selected email address string (e.g., `dualityhiss@icicle.net`).
 You can override either portion of the email with `username` and `domain` options.
+ 
 
 <small>[[view source]](src/email/index.js#L9-L16)</small>
 
@@ -148,7 +205,9 @@ You can override either portion of the email with `username` and `domain` option
 
 `() => string`
 
+
 Returns a randomly-selected first name, e.g. `Carter`.
+
 
 <small>[[view source]](src/first_name/index.js#L7-L9)</small>
 
@@ -157,7 +216,9 @@ Returns a randomly-selected first name, e.g. `Carter`.
 
 `() => string`
 
+
 Generates a random last name, e.g., `Armstrong`.
+
 
 <small>[[view source]](src/last_name/index.js#L8-L10)</small>
 
@@ -166,7 +227,9 @@ Generates a random last name, e.g., `Armstrong`.
 
 `() => string`
 
+
 Generates a random phone number, e.g. `+15556797779`.
+
 
 <small>[[view source]](src/phone_number/index.js#L9-L11)</small>
 
@@ -175,7 +238,9 @@ Generates a random phone number, e.g. `+15556797779`.
 
 `(firstName?: string, lastName?: string) => string`
 
+
 Randomly generates a full name, e.g., `Randall Munroe`. `firstName` and `lastName` can optionally be overridden.
+ 
 
 <small>[[view source]](src/full_name/index.js#L8-L12)</small>
 
@@ -184,8 +249,10 @@ Randomly generates a full name, e.g., `Randall Munroe`. `firstName` and `lastNam
 
 `(options?: {firstName?: string, lastName?: string}) => string`
 
+
 Returns a randomly-selected email address at goodeggs.com of the form `randall.munroe@goodeggs.com`.
 You can override `firstName` and `lastName` by providing appropriate options.
+ 
 
 <small>[[view source]](src/employee/index.js#L22-L32)</small>
 
@@ -194,7 +261,9 @@ You can override `firstName` and `lastName` by providing appropriate options.
 
 `() => string`
 
+
 Returns a randomly-selected first name, e.g. `Carter`.
+
 
 <small>[[view source]](src/first_name/index.js#L7-L9)</small>
 
@@ -203,7 +272,9 @@ Returns a randomly-selected first name, e.g. `Carter`.
 
 `() => string`
 
+
 Returns a randomly-selected foodhub slug, e.g. `sfbay`.
+
 
 <small>[[view source]](src/foodhub/index.js#L8-L10)</small>
 
@@ -212,7 +283,9 @@ Returns a randomly-selected foodhub slug, e.g. `sfbay`.
 
 `(firstName?: string, lastName?: string) => string`
 
+
 Randomly generates a full name, e.g., `Randall Munroe`. `firstName` and `lastName` can optionally be overridden.
+ 
 
 <small>[[view source]](src/full_name/index.js#L8-L12)</small>
 
@@ -221,7 +294,9 @@ Randomly generates a full name, e.g., `Randall Munroe`. `firstName` and `lastNam
 
 `(lowerInclusive?: number, upperExclusive?: number) => number`
 
+
 Generates a random integer (could be negative!). Optionally between `lowerExclusive` and `upperExclusive`.
+ 
 
 <small>[[view source]](src/integer/index.js#L6-L10)</small>
 
@@ -230,7 +305,9 @@ Generates a random integer (could be negative!). Optionally between `lowerExclus
 
 `() => string`
 
+
 Generates an inventory lot label, e.g., "F1A4"
+
 
 <small>[[view source]](src/inventory_lot/index.js#L8-L10)</small>
 
@@ -239,7 +316,9 @@ Generates an inventory lot label, e.g., "F1A4"
 
 `() => string`
 
+
 Generates a random last name, e.g., `Armstrong`.
+
 
 <small>[[view source]](src/last_name/index.js#L8-L10)</small>
 
@@ -248,7 +327,9 @@ Generates a random last name, e.g., `Armstrong`.
 
 `<T>(returnValue: () => T) => ?T`
 
+
 Potentially returns `null`, `undefined`, or the result of the supplied `returnValue` function.
+ 
 
 <small>[[view source]](src/maybe/index.js#L10-L18)</small>
 
@@ -257,7 +338,9 @@ Potentially returns `null`, `undefined`, or the result of the supplied `returnVa
 
 `(lowerInclusive?: number, upperExclusive?: number) => number`
 
+
 Generates a random `number`, optionally between `lowerInclusive` and `upperExclusive`.
+ 
 
 <small>[[view source]](src/number/index.js#L7-L12)</small>
 
@@ -266,7 +349,9 @@ Generates a random `number`, optionally between `lowerInclusive` and `upperExclu
 
 `({+counter?: number, +from?: (string | Date), +machineId?: number, +processId?: number, +timestamp?: (string | Date | number), +to?: (string | Date)}) => string`
 
+
 Generates a random mongodb-friendly objectId string.
+ 
 
 <small>[[view source]](src/object_id/index.js#L11-L42)</small>
 
@@ -275,7 +360,9 @@ Generates a random mongodb-friendly objectId string.
 
 `() => string`
 
+
 Generates a random phone number, e.g. `+15556797779`.
+
 
 <small>[[view source]](src/phone_number/index.js#L9-L11)</small>
 
@@ -284,7 +371,9 @@ Generates a random phone number, e.g. `+15556797779`.
 
 `() => string`
 
+
 Generates a random producer name, e.g., `Bahringer`.
+
 
 <small>[[view source]](src/producer/index.js#L10-L12)</small>
 
@@ -293,8 +382,10 @@ Generates a random producer name, e.g., `Bahringer`.
 
 `(nameArg?: string) => string`
 
+
 Generates a random producer slug, e.g., `anderson`.
 Optionally can override with an explicit name to generate from.
+ 
 
 <small>[[view source]](src/producer/index.js#L18-L20)</small>
 
@@ -303,7 +394,9 @@ Optionally can override with an explicit name to generate from.
 
 `() => string`
 
+
 Generates a random product name, e.g. `Hargrand Apricots`.
+
 
 <small>[[view source]](src/product/index.js#L10-L12)</small>
 
@@ -312,7 +405,9 @@ Generates a random product name, e.g. `Hargrand Apricots`.
 
 `() => string`
 
+
 Generates a random product unit, e.g. `count`.
+
 
 <small>[[view source]](src/product/index.js#L17-L19)</small>
 
@@ -321,7 +416,9 @@ Generates a random product unit, e.g. `count`.
 
 `() => number`
 
+
 Generates a random product count, e.g., `31`.
+
 
 <small>[[view source]](src/product/index.js#L31-L33)</small>
 
@@ -330,7 +427,9 @@ Generates a random product count, e.g., `31`.
 
 `() => string`
 
+
 Generates a random storage type, e.g., `chill`.
+
 
 <small>[[view source]](src/product/index.js#L24-L26)</small>
 
@@ -339,7 +438,9 @@ Generates a random storage type, e.g., `chill`.
 
 `<T>(array: T[]) => T`
 
+
 Chooses one of the elements of the provided `array`.
+ 
 
 <small>[[view source]](src/sample/index.js#L8-L10)</small>
 
@@ -348,7 +449,9 @@ Chooses one of the elements of the provided `array`.
 
 `(length?: number, charset?: string) => string`
 
+
 Generates a random string, optionally of `length` and using chars from provided `charset`.
+ 
 
 <small>[[view source]](src/string/index.js#L11-L16)</small>
 
@@ -357,7 +460,9 @@ Generates a random string, optionally of `length` and using chars from provided 
 
 `() => string`
 
+
 Generate a random tzid, e.g., `America/Denver`.
+ 
 
 <small>[[view source]](src/tzid/index.js#L8-L10)</small>
 
@@ -366,8 +471,10 @@ Generate a random tzid, e.g., `America/Denver`.
 
 `(domain?: string) => string`
 
+
 Generate a random URI, e.g., `https://adl2j.goodeggs.com/ax/faj23`
-@param {*} domain
+@param {*} domain 
+ 
 
 <small>[[view source]](src/uri/index.js#L13-L27)</small>
 
@@ -376,7 +483,9 @@ Generate a random URI, e.g., `https://adl2j.goodeggs.com/ax/faj23`
 
 `() => string`
 
+
 Returns a random zone, e.g. `chill`.
+
 
 <small>[[view source]](src/warehouse_location/index.js#L9-L11)</small>
 
@@ -385,7 +494,9 @@ Returns a random zone, e.g. `chill`.
 
 `() => string`
 
+
 Returns a random aisle, e.g., `F`.
+
 
 <small>[[view source]](src/warehouse_location/index.js#L16-L18)</small>
 
@@ -394,7 +505,9 @@ Returns a random aisle, e.g., `F`.
 
 `() => string`
 
+
 Returns a random rack, e.g., `12`;
+
 
 <small>[[view source]](src/warehouse_location/index.js#L23-L25)</small>
 
@@ -403,7 +516,9 @@ Returns a random rack, e.g., `12`;
 
 `() => string`
 
+
 Returns a random shelf, e.g., `3`
+
 
 <small>[[view source]](src/warehouse_location/index.js#L30-L32)</small>
 
@@ -412,7 +527,9 @@ Returns a random shelf, e.g., `3`
 
 `() => string`
 
+
 Returns a location label for a warehouse location, e.g., `cF12-3`
+ 
 
 <small>[[view source]](src/warehouse_location/index.js#L37-L39)</small>
 
@@ -432,7 +549,7 @@ directory. To run all tests:
 npm test
 ```
 
-To compile the `src` directory to `lib`:
+To compile the `src` directory to `lib` and generate the documentation above:
 
 ```
 npm run build

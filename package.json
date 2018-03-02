@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm run docs && babel src -d . && flow-copy-source src .",
     "prepublishOnly": "npm run build",
-    "test": "flow && npm run test:mocha",
+    "test": "flow --max-warnings=0 && npm run test:mocha",
     "test:mocha": "mocha --compilers js:babel-register src/test.js src/**/test.js",
     "test:watch": "npm run test:mocha -- --watch",
     "docs": "babel-node ./scripts/generate_documentation"

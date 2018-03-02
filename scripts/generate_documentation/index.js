@@ -25,8 +25,7 @@ function expressObject (objectDeclaration, prefix = '') {
         .filter(({value}) => value[0] === '*')
         .map(({value}) => value.split('\n'))
         .flatten()
-        .map((line) => line.replace(/^\s*\*/, '').trim())
-        .filter((line) => line.length > 0)
+        .map((line) => line.replace(/^\s*\*\s?/, ''))
         .join('\n');
 
       const typeDef = getFlowTypeDef(key);
