@@ -16,14 +16,7 @@ export default function babelPlugin ({types: t}) {
   }
 
   function getCreatedTypeAnnotation (path): ?Path {
-    const declarator = path.findParent((p) => p.isVariableDeclarator());
-    const identifier = declarator.get('id');
-    if (identifier.node.typeAnnotation == null) {
-      console.log("BOOM");
-      throw new Error('Flow factories need to be annotated with flow types!');
-    }
-
-    const annotation = declarator.get('id.typeAnnotation.typeAnnotation');
+    const annotation = path.get('typeAnnotation');
     /* TODO actually check the referenced value and make sure it comes from fake-eggs */
     if (annotation.node == null || annotation.node.id.name !== 'Factory') return;
     const id = annotation.get('typeParameters.params.0.id').node.name;
@@ -66,20 +59,39 @@ export default function babelPlugin ({types: t}) {
     );
   }
 
+  /** we need to work around the fact that
+   * transform-flow-strip-types is removing
+   * type information out from under us.
+   * This map keeps track of all the identifiers
+   * that we encounter so that we can use their
+   * definitions later, after they may already
+   * have been removed from the AST.
+   */
+  const identifiers = new WeakMap();
+
   return {
     inherits: syntaxFlow,
     visitor: {
       Flow (path) {
-        console.log(path.node);
+        if (path.isTypeAlias())
+          identifiers.set(path.node.id, path.node.right);
+
+        if (
+          path.isTypeAnnotation() &&
+          path.get('typeAnnotation').isGenericTypeAnnotation() &&
+          path.get('typeAnnotation.id').node.name === 'Factory' /* TODO something more robust than this */
+        ) {
+          const createdType = identifiers.get(getCreatedTypeAnnotation(path));
+          if (createdType == null) return;
+          path.parentPath.parentPath.traverse({
+            CallExpression (innerPath) {
+              if (!isFakeFactoryCall(innerPath.node.callee)) return;
+              const replacement = t.expressionStatement(buildFactoryFromTypeAnnotation(createdType.node));
+              innerPath.replaceWith(replacement);
+            }
+          });
+        }
       },
-      CallExpression (path) {
-        if (!isFakeFactoryCall(path.node.callee)) return;
-        const createdType = getCreatedTypeAnnotation(path);
-        if (createdType == null) return;
-        const replacement = t.expressionStatement(buildFactoryFromTypeAnnotation(createdType.node));
-        console.log(replacement);
-        path.replaceWith(replacement);
-      }
     }
   }
 }
