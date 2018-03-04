@@ -20,7 +20,7 @@ export default function babelPlugin ({types: t}) {
     /* TODO actually check the referenced value and make sure it comes from fake-eggs */
     if (annotation.node == null || annotation.node.id.name !== 'Factory') return;
     const id = annotation.get('typeParameters.params.0.id').node.name;
-    return path.scope.bindings[id].path.get('right');
+    return path.scope.bindings[id].identifier;
   }
 
   function buildFactoryFromTypeAnnotation (node) {
@@ -86,7 +86,7 @@ export default function babelPlugin ({types: t}) {
           path.parentPath.parentPath.traverse({
             CallExpression (innerPath) {
               if (!isFakeFactoryCall(innerPath.node.callee)) return;
-              const replacement = t.expressionStatement(buildFactoryFromTypeAnnotation(createdType.node));
+              const replacement = t.expressionStatement(buildFactoryFromTypeAnnotation(createdType));
               innerPath.replaceWith(replacement);
             }
           });
