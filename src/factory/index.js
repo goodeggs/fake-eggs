@@ -65,4 +65,8 @@ function factory <T: Object> (defaults: DefaultCreatorsFor<T>): Factory<T> {
   };
 }
 
+factory.flow = <T: Object> (): Factory<T> => {
+  throw new Error('Something helpful about installing a babel plugin.')
+}
+
 export default factory;
