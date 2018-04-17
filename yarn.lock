@@ -641,11 +641,7 @@ babel-types@^6.24.1:
     lodash "^4.2.0"
     to-fast-properties "^1.0.1"
 
-babylon@^6.11.0, babylon@^6.15.0:
-  version "6.17.2"
-  resolved "https://registry.yarnpkg.com/babylon/-/babylon-6.17.2.tgz#201d25ef5f892c41bae49488b08db0dd476e9f5c"
-
-babylon@^6.18.0:
+babylon@^6.11.0, babylon@^6.15.0, babylon@^6.18.0:
   version "6.18.0"
   resolved "https://registry.yarnpkg.com/babylon/-/babylon-6.18.0.tgz#af2f3b88fa6f5c1e4c634d1a0f8eac4f55b395e3"
 
@@ -733,9 +729,9 @@ braces@^2.3.0:
     split-string "^3.0.2"
     to-regex "^3.0.1"
 
-browser-stdout@1.3.0:
-  version "1.3.0"
-  resolved "https://registry.npmjs.org/browser-stdout/-/browser-stdout-1.3.0.tgz#f351d32969d32fa5d7a5567154263d928ae3bd1f"
+browser-stdout@1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/browser-stdout/-/browser-stdout-1.3.1.tgz#baa559ee14ced73452229bad7326467c61fabd60"
 
 buffer-shims@~1.0.0:
   version "1.0.0"
@@ -1967,17 +1963,13 @@ lodash.once@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/lodash.once/-/lodash.once-4.1.1.tgz#0dd3971213c7c56df880977d504c88fb471a97ac"
 
-lodash@4.17.5:
+lodash@4.17.5, lodash@^4.14.0, lodash@^4.17.4, lodash@^4.2.0:
   version "4.17.5"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.5.tgz#99a92d65c0272debe8c96b6057bc8fbfa3bed511"
 
 lodash@^3.10.0, lodash@^3.2.0:
   version "3.10.1"
   resolved "https://registry.npmjs.org/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
-
-lodash@^4.14.0, lodash@^4.17.4, lodash@^4.2.0:
-  version "4.17.4"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
 log-symbols@^1.0.2:
   version "1.0.2"
@@ -2145,11 +2137,11 @@ mocha-osx-reporter@^0.1.2:
   dependencies:
     osx-notifier "^0.2.1"
 
-mocha@5.0.1:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/mocha/-/mocha-5.0.1.tgz#759b62c836b0732382a62b6b1fb245ec1bc943ac"
+mocha@5.0.2:
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/mocha/-/mocha-5.0.2.tgz#caab0b813575141c5690c37d53c894b605ae60b5"
   dependencies:
-    browser-stdout "1.3.0"
+    browser-stdout "1.3.1"
     commander "2.11.0"
     debug "3.1.0"
     diff "3.3.1"
