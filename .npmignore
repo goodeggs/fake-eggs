@@ -2,3 +2,7 @@
 /test
 .gitignore
 .babelrc
+test.js
+test.js.flow
+**/test.js
+**/test.js.flow
