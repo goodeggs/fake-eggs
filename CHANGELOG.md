@@ -1,3 +1,7 @@
+# v4.3.0
+
+* Add `optional()`, which accepts a function with return value `T` and returns `T | void`.
+
 # v4.0.0
 
 * *BREAKING:* `maybe()` now takes a function that returns a value, instead of a value.
