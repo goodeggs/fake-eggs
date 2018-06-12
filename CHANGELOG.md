@@ -1,3 +1,7 @@
+# v4.3.1
+
+* Fix missing `optional` export
+
 # v4.3.0
 
 * Add `optional()`, which accepts a function with return value `T` and returns `T | void`.
