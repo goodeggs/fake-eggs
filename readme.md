@@ -21,63 +21,6 @@ fake.employee.email(); // => 'rylee.mayert@goodeggs.com
 
 <!-- automatically generated documentation starts here. -->
 
-#### `fake.factory`
-
-`<T: Object>(defaults: DefaultCreatorsFor<T>) => Factory<T>`
-
-
-Makes a function that can build up arbitrary objects.
-For example:
-
-```js
-import fake from 'fake-eggs';
-
-const recipeCreator = fake.factory({
-  _id: fake.objectId,
-  name: fake.string,
-  photo: fake.uri,
-});
-const recipe = recipeCreator({name: 'Sponge Cake'});
-// => {
-//      _id: '5153d879dcc2d3e27e689de6',
-//      name: 'Sponge Cake',
-//      photo: 'http://u6.goodeggs.com/h4mko8c/61n6ut5/c3nr9',
-//    }
-```
-
-This function really shines if you're leveraging flow types. Here's an example:
-
-```js
-import fake from 'fake-eggs';
-import type {Factory} from 'fake-eggs/factory';
-
-type Recipe = {|
-  +_id: string,
-  +name: string,
-  +photo: string,
-|};
-
-const recipeCreator: Factory<Recipe> = fake.factory({
-  _id: fake.objectId,
-  name: fake.string,
-  photo: fake.uri,
-});
-const recipe = recipeCreator({name: 'Sponge Cake'});
-```
-
-In this case, flow will complain if:
-  - You include properties that are not present in the provided type
-  - You specify factory functions that don't match the provided type
-  - You include overridden properties that are not present in the provided type
-  - You include overridden properties that don't match the provided type
-
-Additionally, flow will understand that the resulting object created by the factory
-is of the provided type.
- 
-
-<small>[[view source]](src/factory/index.js#L55-L66)</small>
-
-  
 #### `fake.array`
 
 `<T>(lengthLowerInclusive: number, lengthUpperExclusive: number, generator: () => T) => T[]`
@@ -257,6 +200,63 @@ You can override `firstName` and `lastName` by providing appropriate options.
 <small>[[view source]](src/employee/index.js#L22-L32)</small>
 
   
+#### `fake.factory`
+
+`<T: Object>(defaults: DefaultCreatorsFor<T>) => Factory<T>`
+
+
+Makes a function that can build up arbitrary objects.
+For example:
+
+```js
+import fake from 'fake-eggs';
+
+const recipeCreator = fake.factory({
+  _id: fake.objectId,
+  name: fake.string,
+  photo: fake.uri,
+});
+const recipe = recipeCreator({name: 'Sponge Cake'});
+// => {
+//      _id: '5153d879dcc2d3e27e689de6',
+//      name: 'Sponge Cake',
+//      photo: 'http://u6.goodeggs.com/h4mko8c/61n6ut5/c3nr9',
+//    }
+```
+
+This function really shines if you're leveraging flow types. Here's an example:
+
+```js
+import fake from 'fake-eggs';
+import type {Factory} from 'fake-eggs/factory';
+
+type Recipe = {|
+  +_id: string,
+  +name: string,
+  +photo: string,
+|};
+
+const recipeCreator: Factory<Recipe> = fake.factory({
+  _id: fake.objectId,
+  name: fake.string,
+  photo: fake.uri,
+});
+const recipe = recipeCreator({name: 'Sponge Cake'});
+```
+
+In this case, flow will complain if:
+  - You include properties that are not present in the provided type
+  - You specify factory functions that don't match the provided type
+  - You include overridden properties that are not present in the provided type
+  - You include overridden properties that don't match the provided type
+
+Additionally, flow will understand that the resulting object created by the factory
+is of the provided type.
+ 
+
+<small>[[view source]](src/factory/index.js#L55-L66)</small>
+
+  
 #### `fake.firstName`
 
 `() => string`
@@ -362,6 +362,15 @@ Generates a random mongodb-friendly objectId string.
  
 
 <small>[[view source]](src/object_id/index.js#L11-L42)</small>
+
+  
+#### `fake.optional`
+
+`<T>(returnValue: () => T) => (T | void)`
+
+
+
+<small>[[view source]](src/optional/index.js#L17-L20)</small>
 
   
 #### `fake.phoneNumber`
