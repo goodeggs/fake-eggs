@@ -7,6 +7,7 @@ import day from './day';
 import digit from './digit';
 import email from './email';
 import employee from './employee';
+import factory from './factory';
 import firstName from './first_name';
 import foodhub from './foodhub';
 import fullName from './full_name';
@@ -16,6 +17,7 @@ import lastName from './last_name';
 import maybe from './maybe';
 import number from './number';
 import objectId from './object_id';
+import optional from './optional';
 import phoneNumber from './phone_number';
 import producer from './producer';
 import product from './product';
@@ -24,10 +26,8 @@ import string from './string';
 import tzid from './tzid';
 import uri from './uri';
 import warehouseLocation from './warehouse_location';
-import factory from './factory';
 
 export default {
-  factory,
   array,
   boolean,
   customer,
@@ -36,6 +36,7 @@ export default {
   digit,
   email,
   employee,
+  factory,
   firstName,
   foodhub,
   fullName,
@@ -45,6 +46,7 @@ export default {
   maybe,
   number,
   objectId,
+  optional,
   phoneNumber,
   producer,
   product,
@@ -52,5 +54,5 @@ export default {
   string,
   tzid,
   uri,
-  warehouseLocation,
-}
+  warehouseLocation
+};
