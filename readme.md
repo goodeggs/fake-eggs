@@ -329,9 +329,17 @@ Generates a random last name, e.g., `Armstrong`.
 
 
 Potentially returns `null`, `undefined`, or the result of the supplied `returnValue` function.
+
+Useful for maybe types in Flow, e.g.:
+
+```
+{
+  maybeValue: ?boolean,
+}
+```
  
 
-<small>[[view source]](src/maybe/index.js#L10-L18)</small>
+<small>[[view source]](src/maybe/index.js#L18-L22)</small>
 
   
 #### `fake.number`
