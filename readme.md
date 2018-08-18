@@ -290,6 +290,29 @@ Randomly generates a full name, e.g., `Randall Munroe`. `firstName` and `lastNam
 <small>[[view source]](src/full_name/index.js#L8-L12)</small>
 
   
+#### `fake.globallyUniqueString`
+
+`(unknown)`
+
+
+Makes a function that will return an internally globally unique string
+by appending a monotonically-increasing integer.
+
+For example:
+
+```js
+import fake from 'fake-eggs';
+
+const uniqueFoo = fake.globallyUniqueString(() => 'foo');
+uniqueFoo() // => "foo_0"
+uniqueFoo() // => "foo_1"
+uniqueFoo() // => "foo_2"
+```
+ 
+
+<small>[[view source]](src/globally_unique_string/index.js#L20-L29)</small>
+
+  
 #### `fake.integer`
 
 `(lowerInclusive?: number, upperExclusive?: number) => number`
