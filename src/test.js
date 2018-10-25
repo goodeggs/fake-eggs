@@ -28,8 +28,8 @@ describe("the default export", function() {
     expect(fake.warehouseLocation.shelf()).to.be.a("string");
     expect(fake.warehouseLocation.label()).to.be.a("string");
     expect(fake.inventoryLot.label()).to.be.a("string");
-    // TODO: better test for this
-    fake.maybe(fake.boolean);
+    expect([undefined, null, true, false]).to.include(fake.maybe(fake.boolean));
+    expect([null, true, false]).to.include(fake.nullable(fake.boolean));
     expect(fake.array(0, 2, fake.boolean)).to.be.an.instanceof(Array);
     expect(fake.boolean()).to.be.a("boolean");
     expect(fake.number()).to.be.a("number");
@@ -38,7 +38,8 @@ describe("the default export", function() {
     expect(fake.tzid()).to.be.a("string");
     expect(fake.objectId()).to.be.a("string");
     expect(fake.integer()).to.be.a("number");
-    expect(fake.sample(["a", "b", "c"])).to.be.a("string");
+    const values = ["a", "b", "c"];
+    expect(values).to.include(fake.sample(values));
     expect(fake.digit()).to.be.a("number");
     expect(fake.string()).to.be.a("string");
     expect(fake.uri()).to.be.a("string");

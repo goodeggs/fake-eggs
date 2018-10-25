@@ -16,6 +16,7 @@ import integer from "./integer";
 import inventoryLot from "./inventory_lot";
 import lastName from "./last_name";
 import maybe from "./maybe";
+import nullable from "./nullable";
 import number from "./number";
 import objectId from "./object_id";
 import optional from "./optional";
@@ -46,6 +47,7 @@ export default {
   inventoryLot,
   lastName,
   maybe,
+  nullable,
   number,
   objectId,
   optional,
