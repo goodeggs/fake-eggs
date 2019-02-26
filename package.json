@@ -3,6 +3,7 @@
   "version": "4.5.0",
   "description": "Generate Good Eggs-flavored data for development / test fixtures",
   "main": "index.js",
+  "types": "./index.d.ts",
   "scripts": {
     "build": "npm run docs && babel src -d . && flow-copy-source src .",
     "prepublishOnly": "npm run build",
