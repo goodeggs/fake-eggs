@@ -1,3 +1,7 @@
+# v4.6.0
+
+* Add TypeScript type definitions
+
 # v4.3.1
 
 * Fix missing `optional` export
