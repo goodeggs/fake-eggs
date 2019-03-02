@@ -1,3 +1,7 @@
+# 4.6.1
+
+* Upgrade lodash to ^4.17.11 (fixes a critical security vulnerability discovered in <4.17.11).
+
 # v4.6.0
 
 * Add TypeScript type definitions
