@@ -348,10 +348,11 @@ Generates a random last name, e.g., `Armstrong`.
   
 #### `fake.maybe`
 
-`<T>(generator: () => T) => ?T`
+`<T>(generator?: () => T) => ?T`
 
 
-Potentially returns `null`, `undefined`, or the result of the supplied `generator` function.
+Potentially returns `null`, `undefined`, or the result of the supplied `generator` function, if
+any.
 
 Useful for maybe types in Flow, e.g.:
 
@@ -360,11 +361,11 @@ Useful for maybe types in Flow, e.g.:
   maybeValue: ?boolean,
 }
 ```
+ 
 
+<small>[[view source]](src/maybe/index.js#L19-L27)</small>
 
-<small>[[view source]](src/maybe/index.js#L18-L22)</small>
-
-
+  
 #### `fake.nullable`
 
 `<T>(returnValue: () => T) => (T | null)`
