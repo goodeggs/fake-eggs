@@ -28,9 +28,7 @@ describe("the default export", function() {
     expect(fake.warehouseLocation.shelf()).to.be.a("string");
     expect(fake.warehouseLocation.label()).to.be.a("string");
     expect(fake.inventoryLot.label()).to.be.a("string");
-    expect([undefined, null, true, false]).to.include(fake.maybe(fake.boolean));
     expect([null, true, false]).to.include(fake.nullable(fake.boolean));
-    expect(fake.array(0, 2, fake.boolean)).to.be.an.instanceof(Array);
     expect(fake.boolean()).to.be.a("boolean");
     expect(fake.number()).to.be.a("number");
     expect(fake.date()).to.be.an.instanceof(Date);

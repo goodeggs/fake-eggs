@@ -26,11 +26,11 @@ fake.employee.email(); // => 'rylee.mayert@goodeggs.com
 `<T>(lengthLowerInclusive: number, lengthUpperExclusive: number, generator: () => T) => T[]`
 
 
-Calls supplied `generator` function to return an array of length `lengthLowerInclusive` and `lengthUpperInclusive`.
+Calls supplied `generator` function to return an array of length `lengthLowerInclusive` and
+`lengthUpperExclusive`.
+ 
 
-
-<small>[[view source]](src/array/index.js#L9-L11)</small>
-
+<small>[[view source]](src/array/index.js#L10-L12)</small>
 
 #### `fake.boolean`
 
@@ -345,13 +345,13 @@ Generates a random last name, e.g., `Armstrong`.
 
 <small>[[view source]](src/last_name/index.js#L8-L10)</small>
 
-
+  
 #### `fake.maybe`
 
-`<T>(returnValue: () => T) => ?T`
+`<T>(generator: () => T) => ?T`
 
 
-Potentially returns `null`, `undefined`, or the result of the supplied `returnValue` function.
+Potentially returns `null`, `undefined`, or the result of the supplied `generator` function.
 
 Useful for maybe types in Flow, e.g.:
 
@@ -367,18 +367,8 @@ Useful for maybe types in Flow, e.g.:
 
 #### `fake.nullable`
 
-`<T>(returnValue: () => T) => T | null`
+`<T>(returnValue: () => T) => (T | null)`
 
-
-Potentially returns `null`, or the result of the supplied `returnValue` function.
-
-Useful for nullable types in Flow, e.g.:
-
-```
-{
-  nullableValue: boolean | null,
-}
-```
 
 
 <small>[[view source]](src/nullable/index.js#L17-L21)</small>

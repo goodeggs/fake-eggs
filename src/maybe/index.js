@@ -5,7 +5,7 @@ const returnUndefined = () => undefined;
 const returnNull = () => null;
 
 /**
- * Potentially returns `null`, `undefined`, or the result of the supplied `returnValue` function.
+ * Potentially returns `null`, `undefined`, or the result of the supplied `generator` function.
  *
  * Useful for maybe types in Flow, e.g.:
  *
@@ -15,8 +15,8 @@ const returnNull = () => null;
  * }
  * ```
  */
-function maybe<T>(returnValue: () => T): ?T {
-  const getter = sample([returnUndefined, returnNull, returnValue]);
+function maybe<T>(generator: () => T): ?T {
+  const getter = sample([returnUndefined, returnNull, generator]);
 
   return getter();
 }
