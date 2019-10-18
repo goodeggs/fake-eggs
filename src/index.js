@@ -60,3 +60,5 @@ export default {
   uri,
   warehouseLocation
 };
+
+// TODO(serhalp) add eslint/prettier to this repo
