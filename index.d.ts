@@ -101,6 +101,7 @@ interface FakeEggs {
   /**
    * Generates a random `number`, optionally between `lowerInclusive` and `upperExclusive`.
    */
+  nullable: <T>(returnValue: () => T) => T | null;
   number: (lowerInclusive?: number, upperExclusive?: number) => number;
   objectId: (options?: {
     timestamp?: string | Date | number;
