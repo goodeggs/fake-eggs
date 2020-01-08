@@ -6,7 +6,7 @@ import { expect } from "goodeggs-test-helpers";
 import integer from "../integer";
 import string, { removeDoubleSpace } from ".";
 
-const removeDuplicates = (str: string): string[] => _.uniq(str.split(""));
+const removeDuplicates = (str: string): Array<string> => _.uniq(str.split(""));
 
 describe("string", function() {
   it("generates a random string", function() {
@@ -26,9 +26,9 @@ describe("string", function() {
     const charsetChars = removeDuplicates(charset);
 
     expect(chars)
-      .to.be.an("array")
-      .that.has.length(charsetChars.length)
-      .that.have.members(charsetChars);
+      .to.be.an.instanceOf(Array)
+      .that.has.an.lengthOf(charsetChars.length)
+      .that.has.members(charsetChars);
   });
 
   it("generates a random without double space and right side space", function() {
