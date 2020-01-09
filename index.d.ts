@@ -33,6 +33,14 @@ interface FakeEggs {
   email: Email;
 
   /**
+   * Generates a random sentence (a string with multiple words), optionally of `length` and using chars from provided `charset`.
+   */
+  sentence: () => string;
+  /**
+   * Generates a random word (a string without any white space), optionally of `length` and using chars from provided `charset`.
+   */
+  word: (length?: number, charset?: string) => string;
+  /**
    * Calls supplied `generator` function to return an array of length `lengthLowerInclusive` and
    * `lengthUpperInclusive`.
    */
