@@ -24,10 +24,12 @@ import phoneNumber from "./phone_number";
 import producer from "./producer";
 import product from "./product";
 import sample from "./sample";
+import sentence from './sentence'
 import string from "./string";
 import tzid from "./tzid";
 import uri from "./uri";
 import warehouseLocation from "./warehouse_location";
+import word from './word'
 
 export default {
   array,
@@ -55,8 +57,10 @@ export default {
   producer,
   product,
   sample,
+  sentence,
   string,
   tzid,
   uri,
-  warehouseLocation
+  warehouseLocation,
+  word,
 };
