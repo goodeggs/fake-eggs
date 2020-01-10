@@ -1,3 +1,7 @@
+# 4.7.0
+
+* Add `word` and `sentence`
+
 # 4.6.1
 
 * Upgrade lodash to ^4.17.11 (fixes a critical security vulnerability discovered in <4.17.11).
