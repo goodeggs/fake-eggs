@@ -1,0 +1,7 @@
+{
+  "extends": "@goodeggs/tsconfig/base",
+  "compilerOptions": {
+    // Chance is not typed in a way that allows you to import the type for an instance
+    "noUnusedLocals": false
+  }
+}

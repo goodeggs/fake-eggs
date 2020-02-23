@@ -1,3 +1,14 @@
+# UNRELEASED
+
+- feat: use Chance.js to generate all fake data
+- chore: convert project from Flow to TypeScript
+- chore: replace test runner (Mocha) with Jest
+- chore: use `@goodeggs/toolkit` to lint project
+- remove `globallyUniqueString`
+- fix: `fake.array` throws when passed array of length `0` to fix possible type mismatch
+- feat: `fake.tzid` accepts optional list of TZID strings
+- feat: `fake.date` validates inputs (`from`/`to`)
+
 # 4.7.0
 
 * Add `word` and `sentence`
