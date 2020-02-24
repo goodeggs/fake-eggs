@@ -15,3 +15,12 @@ export type NonEmptyString = string & {[nes]: string};
 export const isNonEmptyString = (value: unknown): value is NonEmptyString => {
   return typeof value === 'string' && value !== '';
 };
+
+/**
+ * range creates an iterator that yields values of range start (inclusive) to stop (exclusive).
+ */
+export const range = function*(start: number, stop: number): Generator<number, void> {
+  for (let i = start; i < stop; i += 1) {
+    yield i;
+  }
+};

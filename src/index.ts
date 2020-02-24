@@ -12,6 +12,7 @@ import createEmployeeGenerator from './generators/employee';
 import createFirstNameGenerator from './generators/first_name';
 import createFoodhubGenerators from './generators/foodhub';
 import createFullNameGenerator from './generators/full_name';
+import createUniqueGenerator from './generators/unique';
 import createIntegerGenerator from './generators/integer';
 import createInventoryLotGenerators from './generators/inventory_lot';
 import createLastNameGenerator from './generators/last_name';
@@ -102,6 +103,7 @@ export const createFakeEggs = ({
     sentence: createSentenceGenerator(chance),
     string: createStringGenerator(chance),
     tzid: createTzidGenerator(chance),
+    unique: createUniqueGenerator(chance),
     uri: createUriGenerator(chance),
     warehouseLocation: createWarehouseLocationGenerators(chance),
     word: createWordGenerator(chance),
