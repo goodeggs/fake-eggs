@@ -167,7 +167,11 @@ interface FakeEggs {
   /**
    * Generates a random string, optionally of `length` and using chars from provided `charset`.
    */
-  string: (length?: number, charset?: string) => string;
+  string: (length?: number, charset?: string) => string;  
+  /**
+   * Makes a function that will return an internally globally unique string by appending a monotonically-increasing integer.
+   */
+  globallyUniqueString:  <T>(generator?: (arg: T) => string) => (arg: T) => string;
   /**
    * Generate a random tzid, e.g., `America/Denver`.
    */
