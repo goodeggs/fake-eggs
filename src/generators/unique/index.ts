@@ -10,40 +10,31 @@ import {range} from '../../utils';
  * `sameValueZero` (`Object.is`) comparsion. You can customize this behavior by passing your own
  * comparator via `options.isEqual`.
  */
-const createUniqueGenerator = (_chance: Chance.Chance) => <T>(
-  generator: () => T,
-  count: number,
+const createUniqueGenerator = (_chance: Chance.Chance) => <T, A extends unknown[]>(
+  generator: (...args: A) => T,
   {
     isEqual = Object.is,
   }: {
     isEqual?: (a: T, b: T) => boolean;
   } = {},
-): T[] => {
-  const maxRetries = 50 * count;
-  const results: T[] = [];
+): ((...args: A) => T) => {
   const isUniqueValue = (items: T[], val: T): boolean =>
     !items.some((item: T) => isEqual(item, val));
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-labels
-  loop: for (const c of range(0, count)) {
-    let didGenerateUniqueValue = false;
+  const results: T[] = [];
+  return (...args: A): T => {
+    const maxRetries = results.length === 0 ? 50 : 50 * results.length;
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     for (const r of range(0, maxRetries)) {
-      const value = generator();
+      const value = generator(...args);
       if (isUniqueValue(results, value)) {
-        didGenerateUniqueValue = true;
         results.push(value);
-        // eslint-disable-next-line no-labels
-        continue loop;
+        return value;
       }
     }
-    if (!didGenerateUniqueValue) {
-      throw new RangeError(
-        `Failed to generate a unique value; the provided generator may not be capable of creating a unique value for a count of ${count.toString()}.`,
-      );
-    }
-  }
-  return results;
+    throw new RangeError(
+      `Failed to generate a unique value; the provided generator may not be capable of creating a unique value, or your arguments may be too specific.`,
+    );
+  };
 };
 
 export default createUniqueGenerator;
