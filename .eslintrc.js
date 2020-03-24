@@ -1,6 +1,5 @@
 module.exports = {
   root: true,
-  parser: '@typescript-eslint/parser',
   parserOptions: {
     project: './tsconfig.json',
     tsconfigRootDir: __dirname,
@@ -8,6 +7,7 @@ module.exports = {
   extends: [
     'plugin:goodeggs/recommended',
     'plugin:goodeggs/typescript',
+    'plugin:goodeggs/jest',
   ],
   env: {
     node: true,

@@ -5,9 +5,10 @@
 - chore: replace test runner (Mocha) with Jest
 - chore: use `@goodeggs/toolkit` to lint project
 - remove `globallyUniqueString`
+- remove `factory`
 - fix: `fake.array` throws when passed array of length `0` to fix possible type mismatch
 - feat: `fake.tzid` accepts optional list of TZID strings
-- feat: `fake.date` validates inputs (`from`/`to`)
+- feat: add `fake.unique`, which generates a list of unique data given a generator function (or throws an error if it's unable to)
 
 # 4.7.0
 

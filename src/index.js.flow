@@ -71,6 +71,7 @@ type FakeEggs = {
     label(): string,
   },
   word(length?: number, charset?: string): string,
+  unique<T>(generator: () => T, count: number, options?: {isEqual?: (a: T, b: T) => boolean}): string,
 };
 
 export default FakeEggs;
