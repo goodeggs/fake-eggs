@@ -5,10 +5,7 @@ import createIntegerGenerator from '../integer';
 
 const getHexString = (number: number, byteCount: number): string => {
   const charCount = byteCount * 2;
-  return Math.floor(number)
-    .toString(16)
-    .substr(0, charCount)
-    .padStart(charCount, '0');
+  return Math.floor(number).toString(16).substr(0, charCount).padStart(charCount, '0');
 };
 
 const maxNumberGivenByteCount = (byteCount: number): number => 256 ** byteCount;

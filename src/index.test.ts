@@ -1,8 +1,8 @@
 import fake from '.';
 
-describe('the default export', function() {
+describe('the default export', function () {
   // TODO: split these into smaller tests
-  it('works', function() {
+  it('works', function () {
     expect(fake.customer.firstName()).toEqual(expect.any(String));
     expect(fake.customer.lastName()).toEqual(expect.any(String));
     expect(fake.customer.phoneNumber()).toEqual(expect.any(String));
