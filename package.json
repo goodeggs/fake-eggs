@@ -12,7 +12,7 @@
     "lint": "getk run lint-es",
     "lint:fix": "getk run fix-es",
     "prepublishOnly": "npm run build",
-    "test": "yarn run typecheck && yarn run test:unit",
+    "test": "yarn run typecheck && yarn run lint && yarn run test:unit",
     "test:unit": "jest",
     "typecheck": "tsc"
   },
