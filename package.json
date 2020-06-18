@@ -31,7 +31,8 @@
   },
   "homepage": "https://github.com/goodeggs/fake-eggs#readme",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "dependencies": {
     "chance": "^1.1.4",
