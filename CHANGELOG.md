@@ -6,6 +6,8 @@
 - chore: use `@goodeggs/toolkit` to lint project
 - remove `globallyUniqueString`
 - remove `factory`
+- remove `inventoryLot`
+- remove `warehouseLocation`
 - fix: `fake.array` throws when passed array of length `0` to fix possible type mismatch
 - feat: `fake.tzid` accepts optional list of TZID strings
 - feat: add `fake.unique`, which generates a list of unique data given a generator function (or throws an error if it's unable to)

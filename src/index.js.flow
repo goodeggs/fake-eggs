@@ -31,9 +31,6 @@ type FakeEggs = {
   },
   fullName(firstName?: string, lastName?: string): string,
   integer(lowerInclusive?: number, upperExclusive?: number): number
-  inventoryLot: {
-    label(): string,
-  },
   lastName(): string,
   maybe<T>(returnValue: () => T): ?T,
   nullable<T>(returnValue: () => T): T | null,
@@ -63,13 +60,6 @@ type FakeEggs = {
   string(length?: number, charset?: string): string,
   tzid(): string,
   uri(domain?: string = 'goodeggs.com'): string,
-  warehouseLocation: {
-    zone(): string,
-    aisle(): string,
-    rack(): string,
-    shelf(): string,
-    label(): string,
-  },
   word(length?: number, charset?: string): string,
   unique<T>(generator: () => T, count: number, options?: {isEqual?: (a: T, b: T) => boolean}): string,
 };

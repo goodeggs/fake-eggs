@@ -186,14 +186,6 @@ Randomly generates a full name, e.g., `Randall Munroe`. `firstName` and `lastNam
 Generates a random integer (could be negative!). Optionally between `lowerExclusive` and `upperExclusive`.
 
 
-#### `fake.inventoryLot.label`
-
-`() => string`
-
-
-Generates an inventory lot label, e.g., "F1A4"
-
-
 #### `fake.lastName`
 
 `() => string`
@@ -377,46 +369,6 @@ const values = [1, 2, 3, 4, 5].map(() => generateUniqueInteger0to100());
 
 Generate a random URI, e.g., `https://adl2j.goodeggs.com/ax/faj23`
 @param {*} domain 
-
-
-#### `fake.warehouseLocation.zone`
-
-`() => string`
-
-
-Returns a random zone, e.g. `chill`.
-
-
-#### `fake.warehouseLocation.aisle`
-
-`() => string`
-
-
-Returns a random aisle, e.g., `F`.
-
-
-#### `fake.warehouseLocation.rack`
-
-`() => string`
-
-
-Returns a random rack, e.g., `12`;
-
-
-#### `fake.warehouseLocation.shelf`
-
-`() => string`
-
-
-Returns a random shelf, e.g., `3`
-
-
-#### `fake.warehouseLocation.label`
-
-`() => string`
-
-
-Returns a location label for a warehouse location, e.g., `cF12-3`
 
 
 #### `fake.word`

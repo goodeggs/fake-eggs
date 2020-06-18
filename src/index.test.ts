@@ -18,12 +18,6 @@ describe('the default export', function() {
     expect(fake.product.count()).toEqual(expect.any(Number));
     expect(fake.product.storageType()).toEqual(expect.any(String));
     expect(fake.foodhub.slug()).toEqual(expect.any(String));
-    expect(fake.warehouseLocation.zone()).toEqual(expect.any(String));
-    expect(fake.warehouseLocation.aisle()).toEqual(expect.any(String));
-    expect(fake.warehouseLocation.rack()).toEqual(expect.any(String));
-    expect(fake.warehouseLocation.shelf()).toEqual(expect.any(String));
-    expect(fake.warehouseLocation.label()).toEqual(expect.any(String));
-    expect(fake.inventoryLot.label()).toEqual(expect.any(String));
     expect([undefined, null, true, false]).toContain(fake.maybe(fake.boolean));
     expect([null, true, false]).toContain(fake.nullable(fake.boolean));
     expect(fake.array(0, 2, fake.boolean)).toBeInstanceOf(Array);

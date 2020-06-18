@@ -14,7 +14,6 @@ import createFoodhubGenerators from './generators/foodhub';
 import createFullNameGenerator from './generators/full_name';
 import createUniqueGenerator from './generators/unique';
 import createIntegerGenerator from './generators/integer';
-import createInventoryLotGenerators from './generators/inventory_lot';
 import createLastNameGenerator from './generators/last_name';
 import createMaybeCombinator from './combinators/maybe';
 import createNullableCombinator from './combinators/nullable';
@@ -29,7 +28,6 @@ import createSentenceGenerator from './generators/sentence';
 import createStringGenerator from './generators/string';
 import createTzidGenerator from './generators/tzid';
 import createUriGenerator from './generators/uri';
-import createWarehouseLocationGenerators from './generators/warehouse_location';
 import createWordGenerator from './generators/word';
 import {isNonEmptyString} from './utils';
 
@@ -92,7 +90,6 @@ export const createFakeEggs = ({
     foodhub: createFoodhubGenerators(chance),
     fullName: createFullNameGenerator(chance),
     integer: createIntegerGenerator(chance),
-    inventoryLot: createInventoryLotGenerators(chance),
     lastName: createLastNameGenerator(chance),
     number: createNumberGenerator(chance),
     objectId: createObjectIdGenerator(chance),
@@ -105,7 +102,6 @@ export const createFakeEggs = ({
     tzid: createTzidGenerator(chance),
     unique: createUniqueGenerator(chance),
     uri: createUriGenerator(chance),
-    warehouseLocation: createWarehouseLocationGenerators(chance),
     word: createWordGenerator(chance),
   };
 };
