@@ -2,18 +2,51 @@ sudo: required
 dist: trusty
 language: node_js
 node_js:
-- 6.9.1
+- 12
+
 cache:
   yarn: true
   directories:
   - "/home/travis/.npm"
   - "/tmp/ci-tools"
+  - "node_modules"
+
 env:
   global:
   - PATH="/tmp/ci-tools:./node_modules/.bin/:$PATH"
   - NODE_ENV=test
   - FORCE_LOGS=yes
+
 before_install:
-- curl -sSL https://github.com/goodeggs/travis-utils/raw/master/install-ci-tools.sh | CACHE_DIR=/tmp/ci-tools sh -s -- yarn=0.21.3
-install: yarn install
+- curl -sSL https://github.com/goodeggs/travis-utils/raw/master/install-ci-tools.sh | CACHE_DIR=/tmp/ci-tools sh -s -- yarn=1.9.4
 script: yarn test
+jobs:
+  include:
+    # Install dependencies and save them to the Travis cache
+    - stage: "Install dependencies"
+      # Don't run `script`, just install dependencies
+      before_script: skip
+      script: skip
+    # Run tests
+    - stage: "Test"
+      name: "Lint"
+      script: yarn run lint
+    - name: "Type Checking"
+      script: yarn run typecheck
+    - name: "Unit Tests"
+      script: yarn run test:unit
+      after_success:
+        - bash <(curl -s https://codecov.io/bash)
+    # Publish tags
+    - stage: "Publish to registry"
+      if: tag =~ ^v
+      script: skip
+      deploy:
+        provider: npm
+        email: open-source@goodeggs.com
+        api_token:
+          secure: "B+CT3dzubA8T6rLzNS0Qpa0/dXtKu7lIB6S4hTKrS8dtSyfodonkhjnWLAkLQraKGd2a4+yvdr81jZPkTlQNsEYFLb/NBNX7xVq7S/LpV3msjt2BvJLHfF1W0FDXb0VJ80tsyCKUCg0zKZGzSexT8HlnnxIs8v4U3cYZRAWQqoblvqhD8HWbFZI+WqsJ3cO924xg7YOf3oMAlzEmnhrq6AKlTVGDMjruXqR82nebC1WAtHvUtVmpwgcdVGk+ADhRA/AyNUvPt5MLvjOPD3aafDscTR4l0Ihec/+htB9QILcQlR9IaBHpIBe5McVjt8BizWBB40elAMt4Vr6DYxMCJiXHOcVzu4SMKS1SlyE3g8sqSID3nL49G/ghzdLYTc1iTA9QF2/ZEDfjngkzp23zomHWCspN0ODEMY5eUT//vAh/dIpwOkyktveapyB/WvGAE/Ec6YlPhvJnp7qcyclADahQT4Ld0uO9NhtYRqFaCFCK9gSOoR95kA0TS20Z+DXoRt7hp3woRecMOeFuYJZIY7jeLqm+/jm5sVZ8U2bMMsjZCHbvCiQ4aX35LMt30JwOituU2vYSQNDEoj5/dCnPAivmp/IuFGCtX7+899hhwGWphrNStpbK4wGETr/hJt91YDwB6hCfzH+ck7lfByw7arWA+/ijs2+etgMt1Z6nOuQ="
+        skip_cleanup: true
+        on:
+          tags: true
+          all_branches: true

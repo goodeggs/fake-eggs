@@ -1,0 +1,67 @@
+// @flow
+
+type FakeEggs = {
+  maybe<T>(generator: () => T): T | undefined | null,
+  nullable<T>(generator: () => T): T | null,
+  optional<T>(generator: () => T): T | undefined,
+
+  array<T>(lengthLowerInclusive: number, lengthUpperExclusive: number, generator: () => T): T[],
+  boolean(): boolean,
+  customer: {
+    firstName(): string,
+    lastName(): string,
+    phoneNumber(): string,
+    fullName(firstName?: string, lastName?: string): string,
+    email(options?: {username?: string, domain?: string}): string,
+  },
+  date(from?: Date | string, to?: Date | string): Date,
+  day(from?: Date | string, to?: Date | string): string,
+  digit(): number,
+  email(options?: {username?: string, domain?: string}): string,
+  employee: {
+    firstName(): string,
+    lastName(): string,
+    phoneNumber(): string,
+    fullName(firstName?: string, lastName?: string): string,
+    email(options?: {firstName?: string, lastName?: string}): string
+  },
+  firstName(): string,
+  foodhub: {
+    slug(): string,
+  },
+  fullName(firstName?: string, lastName?: string): string,
+  integer(lowerInclusive?: number, upperExclusive?: number): number
+  lastName(): string,
+  maybe<T>(returnValue: () => T): ?T,
+  nullable<T>(returnValue: () => T): T | null,
+  number(lowerInclusive?: number, upperExclusive?: number): number,
+  objectId(options?: {
+    +timestamp?: string | Date | number,
+    +from?: string | Date,
+    +to?: string | Date,
+    +machineId?: number,
+    +processId?: number,
+    +counter?: number,
+  }): string,
+  optional<T>(returnValue: () => T): T | void,
+  phoneNumber(): string,
+  producer: {
+    name(): string,
+    slug(nameArg?: string): string,
+  },
+  product: {
+    name(): string,
+    unit(): string,
+    count(): string,
+    storageType(): number,
+  },
+  sample<T>(array: Array<T>): T,
+  sentence(): string,
+  string(length?: number, charset?: string): string,
+  tzid(): string,
+  uri(domain?: string = 'goodeggs.com'): string,
+  word(length?: number, charset?: string): string,
+  unique<T>(generator: () => T, count: number, options?: {isEqual?: (a: T, b: T) => boolean}): string,
+};
+
+export default FakeEggs;

@@ -1,3 +1,34 @@
+# UNRELEASED
+
+# 5.0.0
+
+## BREAKING
+
+- remove `globallyUniqueString` (see `fake.unique` as a substitute)
+- remove `factory`
+- remove `inventoryLot`
+- remove `warehouseLocation`
+
+## POSSIBLY BREAKING
+
+- fix: `fake.sample` throws when passed array of length `0` to fix possible type mismatch
+- fix: `fake.date` validates arguments (`from`/`to`)
+
+## Features
+
+- feat: add `fake.unique`, which generates a function returning unique values given a generator
+  function (or throws an error if it's unable to)
+- feat: `fake.tzid` accepts optional list of TZID strings
+- feat: use Chance.js to generate all fake data (now reproducible with a seed)
+
+## Internal
+
+- chore: convert project from Flow to TypeScript
+- chore: replace test runner (Mocha) with Jest
+- chore: use `@goodeggs/toolkit` to lint project
+- chore: automatically publish versions from CI
+- chore: upgrade all dependencies
+
 # 4.7.0
 
 * Add `word` and `sentence`
