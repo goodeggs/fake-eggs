@@ -1,9 +1,9 @@
 // @flow
 
-type FakeEggs = {
-  maybe<T>(generator: () => T): T | undefined | null,
+declare export default {
+  maybe<T>(generator: () => T): T | void | null,
   nullable<T>(generator: () => T): T | null,
-  optional<T>(generator: () => T): T | undefined,
+  optional<T>(generator: () => T): T | void,
 
   array<T>(lengthLowerInclusive: number, lengthUpperExclusive: number, generator: () => T): T[],
   boolean(): boolean,
@@ -30,7 +30,7 @@ type FakeEggs = {
     slug(): string,
   },
   fullName(firstName?: string, lastName?: string): string,
-  integer(lowerInclusive?: number, upperExclusive?: number): number
+  integer(lowerInclusive?: number, upperExclusive?: number): number,
   lastName(): string,
   maybe<T>(returnValue: () => T): ?T,
   nullable<T>(returnValue: () => T): T | null,
@@ -59,9 +59,7 @@ type FakeEggs = {
   sentence(): string,
   string(length?: number, charset?: string): string,
   tzid(): string,
-  uri(domain?: string = 'goodeggs.com'): string,
+  uri(domain?: string): string,
   word(length?: number, charset?: string): string,
   unique<T>(generator: () => T, count: number, options?: {isEqual?: (a: T, b: T) => boolean}): string,
 };
-
-export default FakeEggs;
