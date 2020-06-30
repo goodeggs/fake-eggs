@@ -13,6 +13,7 @@
 
 - fix: `fake.sample` throws when passed array of length `0` to fix possible type mismatch
 - fix: `fake.date` validates arguments (`from`/`to`)
+- fix: `fake.array` validates arguments (throws if upper exclusive bound is less than or equal to inclusive lower bound)
 
 ## Features
 
