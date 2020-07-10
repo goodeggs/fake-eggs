@@ -300,6 +300,12 @@ Generate a random URI, e.g., `https://adl2j.goodeggs.com/ax/faj23`
 
 `(length?: number, charset?: string) => string`
 
+#### `fake.zip`
+
+Generate a random zip code (e.g. 55416) with the option of specifying a ZIP+4 format (e.g. 12201-7050)
+
+`(options?: {plusfour?: boolean}) => string`
+
 ## Contributing
 
 To compile the project:
