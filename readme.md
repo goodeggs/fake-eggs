@@ -12,7 +12,7 @@ All exported functions are stateless (meaning you don't have to worry about bind
 import fake from 'fake-eggs';
 
 fake.boolean(); // => true
-fake.sample(['a','b','c']); // => 'b
+fake.sample(['a', 'b', 'c']); // => 'b
 fake.uri(); // => 'https://7wr6_.goodeggs.com/k/ok
 fake.employee.email(); // => 'rylee.mayert@goodeggs.com
 ```
@@ -27,177 +27,134 @@ auto-generation back in. -->
 
 `<T>(lengthLowerInclusive: number, lengthUpperExclusive: number, generator: () => T) => T[]`
 
-
 Calls supplied `generator` function to return an array of length `lengthLowerInclusive` and `lengthUpperInclusive`.
-
 
 #### `fake.boolean`
 
 `() => boolean`
 
-
 Returns `true` or `false`, chosen at random.
-
 
 #### `fake.customer.firstName`
 
 `() => string`
 
-
 Returns a randomly-selected first name, e.g. `Carter`.
-
 
 #### `fake.customer.lastName`
 
 `() => string`
 
-
 Generates a random last name, e.g., `Armstrong`.
-
 
 #### `fake.customer.phoneNumber`
 
 `() => string`
 
-
 Generates a random phone number, e.g. `+15556797779`.
-
 
 #### `fake.customer.fullName`
 
 `(firstName?: string, lastName?: string) => string`
 
-
 Randomly generates a full name, e.g., `Randall Munroe`. `firstName` and `lastName` can optionally be overridden.
-
 
 #### `fake.customer.email`
 
 `(options?: {domain?: string, username?: string}) => string`
 
-
 Returns a randomly-selected email address string (e.g., `dualityhiss@icicle.net`).
 You can override either portion of the email with `username` and `domain` options.
-
 
 #### `fake.date`
 
 `(from?: (Date | string), to?: (Date | string)) => Date`
 
-
 Returns a randomly-selected `Date`, optionally between `from` and `to`.
-
 
 #### `fake.day`
 
 `(from?: (Date | string), to?: (Date | string)) => string`
 
-
 Returns a randomly-selected day string (`YYYY-MM-DD`), optionally between `from` and `to`.
-
 
 #### `fake.digit`
 
 `() => number`
 
-
 Returns a randomly-selected digit (integer between 0 and 9).
-
 
 #### `fake.email`
 
 `(options?: {domain?: string, username?: string}) => string`
 
-
 Returns a randomly-selected email address string (e.g., `dualityhiss@icicle.net`).
 You can override either portion of the email with `username` and `domain` options.
-
 
 #### `fake.employee.firstName`
 
 `() => string`
 
-
 Returns a randomly-selected first name, e.g. `Carter`.
-
 
 #### `fake.employee.lastName`
 
 `() => string`
 
-
 Generates a random last name, e.g., `Armstrong`.
-
 
 #### `fake.employee.phoneNumber`
 
 `() => string`
 
-
 Generates a random phone number, e.g. `+15556797779`.
-
 
 #### `fake.employee.fullName`
 
 `(firstName?: string, lastName?: string) => string`
 
-
 Randomly generates a full name, e.g., `Randall Munroe`. `firstName` and `lastName` can optionally be overridden.
-
 
 #### `fake.employee.email`
 
 `(options?: {firstName?: string, lastName?: string}) => string`
 
-
 Returns a randomly-selected email address at goodeggs.com of the form `randall.munroe@goodeggs.com`.
 You can override `firstName` and `lastName` by providing appropriate options.
-
 
 #### `fake.firstName`
 
 `() => string`
 
-
 Returns a randomly-selected first name, e.g. `Carter`.
-
 
 #### `fake.foodhub.slug`
 
 `() => string`
 
-
 Returns a randomly-selected foodhub slug, e.g. `sfbay`.
-
 
 #### `fake.fullName`
 
 `(firstName?: string, lastName?: string) => string`
 
-
 Randomly generates a full name, e.g., `Randall Munroe`. `firstName` and `lastName` can optionally be overridden.
-
 
 #### `fake.integer`
 
 `(lowerInclusive?: number, upperExclusive?: number) => number`
 
-
 Generates a random integer (could be negative!). Optionally between `lowerExclusive` and `upperExclusive`.
-
 
 #### `fake.lastName`
 
 `() => string`
 
-
 Generates a random last name, e.g., `Armstrong`.
-
 
 #### `fake.maybe`
 
 `<T>(returnValue: () => T) => ?T`
-
 
 Potentially returns `null`, `undefined`, or the result of the supplied `returnValue` function.
 
@@ -209,113 +166,84 @@ Useful for maybe types in Flow, e.g.:
 }
 ```
 
-
 #### `fake.nullable`
 
 `<T>(returnValue: () => T) => (T | null)`
-
-
 
 #### `fake.number`
 
 `(lowerInclusive?: number, upperExclusive?: number) => number`
 
-
 Generates a random `number`, optionally between `lowerInclusive` and `upperExclusive`.
-
 
 #### `fake.objectId`
 
 `({+counter?: number, +from?: (string | Date), +machineId?: number, +processId?: number, +timestamp?: (string | Date | number), +to?: (string | Date)}) => string`
 
-
 Generates a random mongodb-friendly objectId string.
-
 
 #### `fake.optional`
 
 `<T>(returnValue: () => T) => (T | void)`
 
-
-
 #### `fake.phoneNumber`
 
 `() => string`
 
-
 Generates a random phone number, e.g. `+15556797779`.
-
 
 #### `fake.producer.name`
 
 `() => string`
 
-
 Generates a random producer name, e.g., `Bahringer`.
-
 
 #### `fake.producer.slug`
 
 `(nameArg?: string) => string`
 
-
 Generates a random producer slug, e.g., `anderson`.
 Optionally can override with an explicit name to generate from.
-
 
 #### `fake.product.name`
 
 `() => string`
 
-
 Generates a random product name, e.g. `Hargrand Apricots`.
-
 
 #### `fake.product.unit`
 
 `() => string`
 
-
 Generates a random product unit, e.g. `count`.
-
 
 #### `fake.product.count`
 
 `() => number`
 
-
 Generates a random product count, e.g., `31`.
-
 
 #### `fake.product.storageType`
 
 `() => string`
 
-
 Generates a random storage type, e.g., `chill`.
-
 
 #### `fake.sample`
 
 `<T>(array: T[]) => T`
 
-
 Chooses one of the elements of the provided `array`. The given array cannot be empty.
-
 
 #### `fake.sentence`
 
 `() => string`
 
-
-
 #### `fake.string`
 
 `(length?: number, charset?: string) => string`
 
-
 Generates a random string, optionally of `length` and using chars from provided `charset`.
-
 
 #### `fake.tzid`
 
@@ -351,10 +279,9 @@ For example:
 import fake from 'fake-eggs';
 
 const uniqueFoo = fake.globallyUniqueString(() => 'foo');
-uniqueFoo() // => "foo_0"
-uniqueFoo() // => "foo_1"
-uniqueFoo() // => "foo_2"
-
+uniqueFoo(); // => "foo_0"
+uniqueFoo(); // => "foo_1"
+uniqueFoo(); // => "foo_2"
 
 // This could theoretically fail, but we'd have to get extraordinarily unlucky for it to do so.
 const generateInteger0to100 = (): number => Math.floor(Math.random() * 100);
@@ -366,15 +293,18 @@ const values = [1, 2, 3, 4, 5].map(() => generateUniqueInteger0to100());
 
 `(domain?: string) => string`
 
-
 Generate a random URI, e.g., `https://adl2j.goodeggs.com/ax/faj23`
-@param {*} domain 
-
+@param {\*} domain
 
 #### `fake.word`
 
 `(length?: number, charset?: string) => string`
 
+#### `fake.zip`
+
+Generate a random zip code (e.g. 55416) with the option of specifying a ZIP+4 format (e.g. 12201-7050)
+
+`(options?: {plusfour?: boolean}) => string`
 
 ## Contributing
 

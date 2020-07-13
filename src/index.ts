@@ -29,6 +29,7 @@ import createStringGenerator from './generators/string';
 import createTzidGenerator from './generators/tzid';
 import createUriGenerator from './generators/uri';
 import createWordGenerator from './generators/word';
+import createZipGenerator from './generators/zip';
 import {isNonEmptyString} from './utils';
 
 const parentDebug = createDebug(`@goodeggs/fake-eggs`);
@@ -103,6 +104,7 @@ export const createFakeEggs = ({
     unique: createUniqueGenerator(chance),
     uri: createUriGenerator(chance),
     word: createWordGenerator(chance),
+    zip: createZipGenerator(chance),
   };
 };
 

@@ -33,5 +33,6 @@ describe('the default export', function () {
     expect(fake.digit()).toEqual(expect.any(Number));
     expect(fake.string()).toEqual(expect.any(String));
     expect(fake.uri()).toEqual(expect.any(String));
+    expect(fake.zip()).toEqual(expect.any(String));
   });
 });
