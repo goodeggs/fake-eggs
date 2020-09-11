@@ -2,7 +2,7 @@
  * Lowercases and removes spaces from a string, so that it can be used as a slug.
  */
 export const slugify = (text: string): string => {
-  return text.toLowerCase().replace(/[^\w\-_]+/g, ''); // remove all non-word characters
+  return text.toLowerCase().replace(/[\W_]/g, ''); // remove all non-word characters
 };
 
 declare const nes: unique symbol;
