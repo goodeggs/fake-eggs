@@ -13,9 +13,15 @@ const createDateGenerator = (chance: Chance.Chance) => (
   from?: Date | string,
   to?: Date | string,
 ): Date => {
+  // https://tc39.es/ecma262/#sec-time-values-and-time-range
+  // https://tc39.es/ecma262/#_ref_6257:~:text=A%20Number%20can%20exactly%20represent%20all,beginning%20of%2001%20January%2C%201970%20UTC.
+  const minTimeMilliseconds = -8640000000000000;
+  const maxTimeMilliseconds = 8640000000000000;
+  const integer = createIntegerGenerator(chance);
+
   if (from == null) {
-    // https://github.com/goodeggs/avocado/commit/143f03ff267766be62189f901a174b02006650eb
-    from = 'Tue Oct 04 2011 10:44:00 GMT-0700 (PDT)';
+    const fromTime = integer(minTimeMilliseconds, maxTimeMilliseconds);
+    from = new Date(fromTime);
   }
   if (typeof from === 'string') {
     from = new Date(from);
@@ -25,8 +31,9 @@ const createDateGenerator = (chance: Chance.Chance) => (
   }
 
   if (to == null) {
-    // ¯\_(ツ)_/¯
-    to = 'Tue Dec 31 2019 16:00:00 GMT-0800 (PST)';
+    // When to is null set some value that is never less than `from`
+    const toTime = integer(from.getTime(), maxTimeMilliseconds);
+    to = new Date(toTime);
   }
   if (typeof to === 'string') {
     to = new Date(to);
@@ -35,7 +42,6 @@ const createDateGenerator = (chance: Chance.Chance) => (
     throw new RangeError('`to` is not a valid date');
   }
 
-  const integer = createIntegerGenerator(chance);
   return new Date(integer(dateInSeconds(from), dateInSeconds(to)) * 1000);
 };
 
