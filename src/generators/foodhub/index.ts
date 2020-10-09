@@ -3,7 +3,7 @@ import {Chance} from 'chance';
 import createSampleGenerator from '../sample';
 
 // TODO(ndhoule): Use goodeggs-foodhubs
-const foodhubSlugs = ['sfbay', 'la', 'nola', 'nyc', 'tomorrowland'];
+const foodhubSlugs = ['sfbay', 'la', 'nola', 'nyc', 'MAR1', 'OKN2'];
 
 /**
  * Returns a randomly-selected foodhub slug, e.g. `sfbay`.
