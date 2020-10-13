@@ -10,7 +10,7 @@ const createIntegerGenerator = (chance: Chance.Chance) => (
   chance.integer({
     min: lowerInclusive,
     // chance.integer's max param is inclusive
-    max: upperExclusive && upperExclusive - 1,
+    max: upperExclusive != null ? upperExclusive - 1 : upperExclusive,
   });
 
 export default createIntegerGenerator;
