@@ -20,8 +20,7 @@ const createDateGenerator = (chance: Chance.Chance) => (
   const integer = createIntegerGenerator(chance);
 
   if (from == null) {
-    const fromTime = integer(minTimeMilliseconds, maxTimeMilliseconds);
-    from = new Date(fromTime);
+    from = new Date(minTimeMilliseconds);
   }
   if (typeof from === 'string') {
     from = new Date(from);
@@ -31,9 +30,7 @@ const createDateGenerator = (chance: Chance.Chance) => (
   }
 
   if (to == null) {
-    // When to is null set some value that is never less than `from`
-    const toTime = integer(from.getTime(), maxTimeMilliseconds);
-    to = new Date(toTime);
+    to = new Date(maxTimeMilliseconds);
   }
   if (typeof to === 'string') {
     to = new Date(to);
