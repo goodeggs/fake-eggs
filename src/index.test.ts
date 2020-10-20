@@ -23,11 +23,9 @@ describe('the default export', function () {
     expect(fake.array(0, 2, fake.boolean)).toBeInstanceOf(Array);
     expect(fake.boolean()).toEqual(expect.any(Boolean));
     expect(fake.number()).toEqual(expect.any(Number));
-    expect(fake.date()).toBeInstanceOf(Date);
     expect(fake.day()).toEqual(expect.any(String));
     expect(fake.tzid()).toEqual(expect.any(String));
     expect(fake.objectId()).toEqual(expect.any(String));
-    expect(fake.integer()).toEqual(expect.any(Number));
     const values = ['a', 'b', 'c'];
     expect(values).toContain(fake.sample(values));
     expect(fake.digit()).toEqual(expect.any(Number));
