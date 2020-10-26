@@ -12,10 +12,11 @@ const maxNumberGivenByteCount = (byteCount: number): number => 256 ** byteCount;
 
 /**
  * Generates a random mongodb-friendly objectId string.
+ * TODO(serhalp) Is this necessary? Maybe just generate a random 24-character hex string?
  */
 const createObjectIdGenerator = (chance: Chance.Chance) => ({
   counter,
-  from,
+  from = new Date(0),
   machineId,
   processId,
   timestamp,
@@ -28,6 +29,13 @@ const createObjectIdGenerator = (chance: Chance.Chance) => ({
   timestamp?: string | Date | number;
   to?: string | Date;
 } = {}): string => {
+  if (from.valueOf() < 0) {
+    throw new RangeError('`from` cannot be earlier than Unix epoch (1970-01-01 00:00:00.000)');
+  }
+  if (to != null && to.valueOf() < 0) {
+    throw new RangeError('`to` cannot be earlier than Unix epoch (1970-01-01 00:00:00.000)');
+  }
+
   const date = createDateGenerator(chance);
   const integer = createIntegerGenerator(chance);
 
