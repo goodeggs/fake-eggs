@@ -1,5 +1,17 @@
 # UNRELEASED
 
+# 6.0.0
+
+## BREAKING
+
+No truly breaking changes; should have been a patch.
+
+## POSSIBLY BREAKING
+
+- `slugify()` no longer preserves hyphens and dashes; consequently,
+  `producer.slug()` and `product.slug()` no longer ever includes hyphens or
+  dashes
+
 # 5.0.0
 
 ## BREAKING
