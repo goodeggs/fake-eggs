@@ -2,8 +2,6 @@
 
 Providing you with all sorts of Good Eggs-style fake data!
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/goodeggs/fake-eggs.svg)](https://greenkeeper.io/)
-
 All exported functions are stateless (meaning you don't have to worry about binding to `this`).
 
 ## Examples
