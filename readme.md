@@ -4,6 +4,10 @@ Providing you with all sorts of Good Eggs-style fake data!
 
 All exported functions are stateless (meaning you don't have to worry about binding to `this`).
 
+## Purpose and Scope
+
+Use `fake-eggs` to generate all random factory data except for json schemas where [unionized](https://github.com/goodeggs/unionized) should be employed.
+
 ## Examples
 
 ```javascript
