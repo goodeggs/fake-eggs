@@ -1,6 +1,7 @@
 import {Chance} from 'chance';
 import createDebug from 'debug';
 
+import createAddressGenerator from './generators/address';
 import createArrayGenerator from './generators/array';
 import createBooleanGenerator from './generators/boolean';
 import createCustomerGenerators from './generators/customer';
@@ -79,6 +80,7 @@ export const createFakeEggs = ({
      * Generators
      */
 
+    address: createAddressGenerator(chance),
     array: createArrayGenerator(chance),
     boolean: createBooleanGenerator(chance),
     customer: createCustomerGenerators(chance),
