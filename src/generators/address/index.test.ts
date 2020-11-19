@@ -7,9 +7,9 @@ describe('address', () => {
     const chance = new Chance();
     const address = createAddressGenerator(chance);
 
-    const addresValue = address();
+    const addressValue = address();
 
-    expect(addresValue).not.toBe(null);
-    expect(addresValue).toMatch(/^[a-zA-Z0-9 ]*$/);
+    expect(addressValue).not.toBe(null);
+    expect(addressValue).toMatch(/^[a-zA-Z0-9 ]*$/);
   });
 });
