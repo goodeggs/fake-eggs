@@ -5,7 +5,7 @@ import {Chance} from 'chance';
  * See https://chancejs.com/basics/integer.html.
  *
  * However, per the GraphQL spec, Integers are only treated as valid when they are representable as
- * a 32-bit signed integer, providing the broadest support across platforms.
+ * a 32-bit signed integer: https://spec.graphql.org/June2018/#sec-Int.
  *
  * It doesn't seem worthwhile to provide two separate integer functions in fake-eggs, nor to require
  * thousands of calls to `fake.integer()` across apps that use GraphQL to pass in ranges to deal
