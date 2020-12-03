@@ -6,7 +6,11 @@ All exported functions are stateless (meaning you don't have to worry about bind
 
 ## Purpose and Scope
 
-Use `fake-eggs` to generate all random factory data except for json schemas where [unionized](https://github.com/goodeggs/unionized) should be employed.
+Use `fake-eggs` to generate random and realistic "Good Eggs"-style data. This module can be used for test data, local development, and beyond!
+
+Note: when generating json schemas or mongoose schemas [Unionized](https://github.com/goodeggs/unionized) should be used as `fake-eggs` does not support factory-style composition for test data objects.
+
+If `fake-eggs` doesn't support the random data you're trying to generate consider opening an issue to track it - or open a PR to contribute!
 
 ## Examples
 
