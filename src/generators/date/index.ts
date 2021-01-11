@@ -7,21 +7,22 @@ const dateInSeconds = (_date: Date | string): number => {
 };
 
 /**
+ * For convenience of compatibility with `fake.day()` defaults, use 1001-01-01 00:00:00 and
+ * 9999-01-01 00:00:00 as the default `from` and `to`, respectively. See comment in `fake.day()` for
+ * context on why we use these defaults.
+ */
+const DEFAULT_FROM = new Date(-30578688000000);
+const DEFAULT_TO = new Date(253370764800000);
+
+/**
  * Returns a randomly-selected `Date`, optionally between `from` and `to`.
  */
 const createDateGenerator = (chance: Chance.Chance) => (
-  from?: Date | string,
-  to?: Date | string,
+  from: Date | string = DEFAULT_FROM,
+  to: Date | string = DEFAULT_TO,
 ): Date => {
-  // https://tc39.es/ecma262/#sec-time-values-and-time-range
-  // https://tc39.es/ecma262/#_ref_6257:~:text=A%20Number%20can%20exactly%20represent%20all,beginning%20of%2001%20January%2C%201970%20UTC.
-  const minTimeMilliseconds = -8640000000000000;
-  const maxTimeMilliseconds = 8640000000000000;
   const integer = createIntegerGenerator(chance);
 
-  if (from == null) {
-    from = new Date(minTimeMilliseconds);
-  }
   if (typeof from === 'string') {
     from = new Date(from);
   }
@@ -29,9 +30,6 @@ const createDateGenerator = (chance: Chance.Chance) => (
     throw new RangeError('`from` is not a valid date');
   }
 
-  if (to == null) {
-    to = new Date(maxTimeMilliseconds);
-  }
   if (typeof to === 'string') {
     to = new Date(to);
   }
