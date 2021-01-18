@@ -1,4 +1,4 @@
 module.exports = {
   clearMocks: true,
-  setupFilesAfterEnv: ['./jest.setup.ts'],
+  setupFilesAfterEnv: ['./test/jest.setup.ts'],
 };
