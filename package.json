@@ -1,12 +1,12 @@
 {
   "name": "fake-eggs",
-  "version": "6.2.0",
+  "version": "6.2.1",
   "description": "Generate Good Eggs-flavored data for development / test fixtures",
   "main": "dist/index.js",
   "scripts": {
     "build": "yarn run clean && yarn run build:src && yarn run build:types && yarn run build:flow_types",
     "build:src": "babel --extensions .es6,.js,.ts,.es,.jsx,.tsx,.mjs --source-maps --ignore 'src/**/*.test.ts' --out-dir dist/ src/",
-    "build:types": "tsc --noEmit false --declaration --emitDeclarationOnly --outDir dist/",
+    "build:types": "tsc --project tsconfig.declarations.json",
     "build:flow_types": "cp src/index.js.flow dist/index.js.flow",
     "clean": "rm -rf dist/",
     "lint": "getk run lint-es",
