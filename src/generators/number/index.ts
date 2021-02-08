@@ -1,16 +1,17 @@
 import {Chance} from 'chance';
 
 /**
- * Generates a random `number`, optionally between `lowerInclusive` and `upperExclusive`.
+ * Generates a random `number`, optionally between `lowerInclusive` and `upperExclusive` with `fixed` number of digits after the decimal.
  */
 const createNumberGenerator = (chance: Chance.Chance) => (
   lowerInclusive = -1000000,
   upperExclusive = 1000000,
+  fixed = 4,
 ): number =>
   chance.floating({
     min: lowerInclusive,
-    // chance.floating() returns 4 digits after the decimal at most, and its `max` is inclusive
-    max: upperExclusive - 0.0001,
+    max: upperExclusive,
+    fixed,
   });
 
 export default createNumberGenerator;
