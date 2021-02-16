@@ -1,4 +1,4 @@
-import { Chance } from 'chance';
+import {Chance} from 'chance';
 
 /**
  * Generates a random `number`, optionally between `lowerInclusive` and `upperExclusive` with `fixed` number of digits after the decimal.
@@ -20,6 +20,6 @@ const createNumberGenerator = (chance: Chance.Chance) => (
     max: upperExclusive - EPSILON,
     fixed,
   });
-}
+};
 
 export default createNumberGenerator;
