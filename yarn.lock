@@ -212,7 +212,7 @@
   version "7.12.11"
   resolved "https://registry.yarnpkg.com/@babel/helper-validator-identifier/-/helper-validator-identifier-7.12.11.tgz#c9a1f021917dcb5ccf0d4e453e399022981fc9ed"
 
-"@babel/helper-validator-option@^7.12.11", "@babel/helper-validator-option@^7.12.16":
+"@babel/helper-validator-option@^7.12.16":
   version "7.12.16"
   resolved "https://registry.yarnpkg.com/@babel/helper-validator-option/-/helper-validator-option-7.12.16.tgz#f73cbd3bbba51915216c5dea908e9b206bb10051"
 
@@ -242,8 +242,8 @@
     js-tokens "^4.0.0"
 
 "@babel/node@^7.12.6":
-  version "7.12.16"
-  resolved "https://registry.yarnpkg.com/@babel/node/-/node-7.12.16.tgz#f07d9a7c3b96bf3d1fa21b71d1275b0010f0a568"
+  version "7.12.17"
+  resolved "https://registry.yarnpkg.com/@babel/node/-/node-7.12.17.tgz#f892e4a16a108a62f7d4cc327f1608d8dae0d556"
   dependencies:
     "@babel/register" "^7.12.13"
     commander "^4.0.1"
