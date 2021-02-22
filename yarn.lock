@@ -242,10 +242,10 @@
     js-tokens "^4.0.0"
 
 "@babel/node@^7.12.6":
-  version "7.12.17"
-  resolved "https://registry.yarnpkg.com/@babel/node/-/node-7.12.17.tgz#f892e4a16a108a62f7d4cc327f1608d8dae0d556"
+  version "7.13.0"
+  resolved "https://registry.yarnpkg.com/@babel/node/-/node-7.13.0.tgz#300ea0f4d516a7586c76797404b951c709bfa821"
   dependencies:
-    "@babel/register" "^7.12.13"
+    "@babel/register" "^7.13.0"
     commander "^4.0.1"
     core-js "^3.2.1"
     lodash "^4.17.19"
@@ -754,9 +754,9 @@
     "@babel/helper-validator-option" "^7.12.17"
     "@babel/plugin-transform-typescript" "^7.12.17"
 
-"@babel/register@^7.12.13":
-  version "7.12.13"
-  resolved "https://registry.yarnpkg.com/@babel/register/-/register-7.12.13.tgz#e9cb57618264f2944634da941ba9755088ef9ec5"
+"@babel/register@^7.13.0":
+  version "7.13.0"
+  resolved "https://registry.yarnpkg.com/@babel/register/-/register-7.13.0.tgz#865eb78a3ed94c6ad72d0e550180b3d6566dfb8d"
   dependencies:
     find-cache-dir "^2.0.0"
     lodash "^4.17.19"
