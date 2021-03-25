@@ -178,9 +178,9 @@ Useful for maybe types in Flow, e.g.:
 
 #### `fake.number`
 
-`(lowerInclusive?: number, upperExclusive?: number) => number`
+`(lowerInclusive?: number, upperExclusive?: number, fixed?: number) => number`
 
-Generates a random `number`, optionally between `lowerInclusive` and `upperExclusive`.
+Generates a random `number`, optionally between `lowerInclusive` and `upperExclusive` with a `fixed` number of digits after the decimal.
 
 #### `fake.objectId`
 

@@ -3,14 +3,14 @@ import {Chance} from 'chance';
 import createIntegerGenerator from '.';
 
 describe('integer', () => {
-  it('generates a value in the range -9007199254740991 to 9007199254740991', (): void => {
+  it('generates a value in the range -2147483648 to 2147483647', (): void => {
     const chance = new Chance();
     const integer = createIntegerGenerator(chance);
 
     const value = integer();
 
-    expect(value).toBeGreaterThanOrEqual(-9007199254740991);
-    expect(value).toBeLessThanOrEqual(9007199254740991);
+    expect(value).toBeGreaterThanOrEqual(-2147483648);
+    expect(value).toBeLessThan(2147483647);
   });
 
   it('generates a value greater than or equal to `lowerInclusive`', (): void => {

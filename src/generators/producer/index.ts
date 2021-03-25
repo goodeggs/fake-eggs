@@ -12,7 +12,7 @@ const createNameGenerator = (chance: Chance.Chance) => (): string => chance.comp
  * Optionally can override with an explicit name to generate from.
  */
 const createSlugGenerator = (chance: Chance.Chance) => (slug?: string): string =>
-  slugify(slug || createNameGenerator(chance)());
+  slugify(slug ?? createNameGenerator(chance)());
 
 const createProducerGenerators = (chance: Chance.Chance) => ({
   name: createNameGenerator(chance),

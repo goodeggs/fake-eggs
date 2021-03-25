@@ -3,16 +3,14 @@ import {Chance} from 'chance';
 import createDateGenerator from '.';
 
 describe('date', () => {
-  it('generates a date in the range `-271821-04-20T00:00:00.000Z` to `+275760-09-13T00:00:00.000Z`', (): void => {
+  it('generates a date in the range `1001-01-01T00:00:00.000Z` to `9999-01-01T00:00:00.000Z`', (): void => {
     const chance = new Chance();
     const date = createDateGenerator(chance);
 
     const value = date();
 
-    expect(value.valueOf()).toBeGreaterThanOrEqual(
-      new Date('-271821-04-20T00:00:00.000Z').valueOf(),
-    );
-    expect(value.valueOf()).toBeLessThanOrEqual(new Date('+275760-09-13T00:00:00.000Z').valueOf());
+    expect(value.valueOf()).toBeGreaterThanOrEqual(new Date('1001-01-01T00:00:00.000Z').valueOf());
+    expect(value.valueOf()).toBeLessThanOrEqual(new Date('9999-01-01T00:00:00.000Z').valueOf());
   });
 
   it('generates a value greater than or equal to `from`', (): void => {

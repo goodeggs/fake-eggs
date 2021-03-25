@@ -9,7 +9,7 @@ const createEmailGenerator = (chance: Chance.Chance) => ({
   username,
 }: {domain?: string; username?: string} = {}): string => {
   const email = chance.email(domain != null ? {domain} : undefined);
-  if (username) {
+  if (username != null) {
     return email.replace(/.+@/, `${username}@`);
   }
   return email;

@@ -22,8 +22,6 @@ describe('the default export', function () {
     expect([null, true, false]).toContain(fake.nullable(fake.boolean));
     expect(fake.array(0, 2, fake.boolean)).toBeInstanceOf(Array);
     expect(fake.boolean()).toEqual(expect.any(Boolean));
-    expect(fake.number()).toEqual(expect.any(Number));
-    expect(fake.day()).toEqual(expect.any(String));
     expect(fake.tzid()).toEqual(expect.any(String));
     const values = ['a', 'b', 'c'];
     expect(values).toContain(fake.sample(values));

@@ -3217,7 +3217,7 @@ export const productNames = [
   'Organic Unfiltered Gravenstein Cider Vinegar',
   'Orange Blossom Honey, 5.5 oz',
   'Pure Vanilla Extract (4oz)',
-  'Casa Rosa Farm  Organic Extra Virgin Olive Oil',
+  'Casa Rosa Farm Organic Extra Virgin Olive Oil',
   'Dirty Mint Chip Ice Cream',
   'Cheddar Cheese Bagels',
   'Fresh Peach Ice Cream',
