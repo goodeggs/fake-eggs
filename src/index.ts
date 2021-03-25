@@ -67,7 +67,7 @@ export const createFakeEggs = ({
   const chance = new Chance(seed);
   debug(`Initialized fake-eggs`);
 
-  return {
+  const customMethods = {
     /*
      * Combinators
      */
@@ -108,6 +108,23 @@ export const createFakeEggs = ({
     word: createWordGenerator(chance),
     zip: createZipGenerator(chance),
   };
+
+  type FakeEggsCustomMethods = typeof customMethods;
+  interface FakeEggs
+    extends Omit<Chance.Chance, keyof FakeEggsCustomMethods>,
+      FakeEggsCustomMethods {}
+
+  const proxyHandler: ProxyHandler<FakeEggsCustomMethods> = {
+    get(target: Record<string, unknown>, property: string, receiver: Record<string, unknown>) {
+      if (property in target) {
+        return Reflect.get(target, property, receiver);
+      }
+
+      return Reflect.get(chance, property, chance).bind(chance);
+    },
+  };
+
+  return new Proxy<FakeEggsCustomMethods>(customMethods, proxyHandler) as FakeEggs;
 };
 
 const getDefaultSeed = (): string | undefined => {
