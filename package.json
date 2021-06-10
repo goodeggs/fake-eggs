@@ -50,7 +50,7 @@
     "@goodeggs/tsconfig": "^1.0.0",
     "@types/debug": "^4.1.5",
     "@types/jest": "^26.0.15",
-    "babel-jest": "^26.6.3",
+    "babel-jest": "^27.0.2",
     "jest": "^26.6.3",
     "jest-extended": "^0.11.5",
     "typescript": "^4.1.2"
