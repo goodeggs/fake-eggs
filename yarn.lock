@@ -905,9 +905,10 @@
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@goodeggs/prettier-config/-/prettier-config-1.0.0.tgz#c58c75dfeafb3dacadc586934c1622b7b5b6acab"
 
-"@goodeggs/toolkit@^4.0.1":
+"@goodeggs/toolkit@^4.0.2":
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/@goodeggs/toolkit/-/toolkit-4.0.2.tgz#59ac3474b6af18ca2caa015626867ec251110502"
+  integrity sha512-YwgW1XZF5l0K0GQLYf173dYaewNwvC6TDiGOX0BTqrYHywukPKOF1x/gjH/IpDLCMjS3ruP7+4wQFe6Z2D4VoA==
   dependencies:
     "@babel/core" "^7.13.8"
     "@goodeggs/prettier-config" "^1.0.0"
