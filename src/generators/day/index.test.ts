@@ -3,9 +3,18 @@ import {Chance} from 'chance';
 import createDayGenerator, {DEFAULT_FROM, DEFAULT_TO} from '.';
 
 // Neither jest nor jest-extended has any expressive assertions for comparing *strings*. 🤷
-const greaterThanOrEqualTo = (max: string) => (value: string): boolean => value >= max;
-const lessThan = (min: string) => (value: string): boolean => value < min;
-const lessThanOrEqualTo = (min: string) => (value: string): boolean => value <= min;
+const greaterThanOrEqualTo =
+  (max: string) =>
+  (value: string): boolean =>
+    value >= max;
+const lessThan =
+  (min: string) =>
+  (value: string): boolean =>
+    value < min;
+const lessThanOrEqualTo =
+  (min: string) =>
+  (value: string): boolean =>
+    value <= min;
 
 describe('day', () => {
   it('throws an error given a `from` string with format other than YYYY-MM-DD', (): void => {

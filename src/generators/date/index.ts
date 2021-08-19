@@ -17,27 +17,26 @@ const DEFAULT_TO = new Date(253370764800000);
 /**
  * Returns a randomly-selected `Date`, optionally between `from` and `to`.
  */
-const createDateGenerator = (chance: Chance.Chance) => (
-  from: Date | string = DEFAULT_FROM,
-  to: Date | string = DEFAULT_TO,
-): Date => {
-  const integer = createIntegerGenerator(chance);
+const createDateGenerator =
+  (chance: Chance.Chance) =>
+  (from: Date | string = DEFAULT_FROM, to: Date | string = DEFAULT_TO): Date => {
+    const integer = createIntegerGenerator(chance);
 
-  if (typeof from === 'string') {
-    from = new Date(from);
-  }
-  if (Number.isNaN(from.valueOf())) {
-    throw new RangeError('`from` is not a valid date');
-  }
+    if (typeof from === 'string') {
+      from = new Date(from);
+    }
+    if (Number.isNaN(from.valueOf())) {
+      throw new RangeError('`from` is not a valid date');
+    }
 
-  if (typeof to === 'string') {
-    to = new Date(to);
-  }
-  if (Number.isNaN(to.valueOf())) {
-    throw new RangeError('`to` is not a valid date');
-  }
+    if (typeof to === 'string') {
+      to = new Date(to);
+    }
+    if (Number.isNaN(to.valueOf())) {
+      throw new RangeError('`to` is not a valid date');
+    }
 
-  return new Date(integer(dateInSeconds(from), dateInSeconds(to)) * 1000);
-};
+    return new Date(integer(dateInSeconds(from), dateInSeconds(to)) * 1000);
+  };
 
 export default createDateGenerator;

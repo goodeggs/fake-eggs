@@ -16,12 +16,12 @@ const alwaysNull = (): null => null;
  * }
  * ```
  */
-const createMaybeCombinator = (chance: Chance.Chance) => <T>(
-  alwaysValue: () => T,
-): T | null | undefined => {
-  const sample = createSampleGenerator(chance);
-  const getter = sample([alwaysUndefined, alwaysNull, alwaysValue]);
-  return getter();
-};
+const createMaybeCombinator =
+  (chance: Chance.Chance) =>
+  <T>(alwaysValue: () => T): T | null | undefined => {
+    const sample = createSampleGenerator(chance);
+    const getter = sample([alwaysUndefined, alwaysNull, alwaysValue]);
+    return getter();
+  };
 
 export default createMaybeCombinator;

@@ -15,10 +15,12 @@ const alwaysNull = (): null => null;
  * }
  * ```
  */
-const createNullableCombinator = (chance: Chance.Chance) => <T>(alwaysValue: () => T): T | null => {
-  const sample = createSampleGenerator(chance);
-  const getter = sample([alwaysNull, alwaysValue]);
-  return getter();
-};
+const createNullableCombinator =
+  (chance: Chance.Chance) =>
+  <T>(alwaysValue: () => T): T | null => {
+    const sample = createSampleGenerator(chance);
+    const getter = sample([alwaysNull, alwaysValue]);
+    return getter();
+  };
 
 export default createNullableCombinator;

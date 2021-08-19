@@ -15,12 +15,12 @@ const alwaysUndefined = (): undefined => undefined;
  * }
  * ```
  */
-const createOptionalCombinator = (chance: Chance.Chance) => <T>(
-  alwaysValue: () => T,
-): T | undefined => {
-  const sample = createSampleGenerator(chance);
-  const getter = sample([alwaysUndefined, alwaysValue]);
-  return getter();
-};
+const createOptionalCombinator =
+  (chance: Chance.Chance) =>
+  <T>(alwaysValue: () => T): T | undefined => {
+    const sample = createSampleGenerator(chance);
+    const getter = sample([alwaysUndefined, alwaysValue]);
+    return getter();
+  };
 
 export default createOptionalCombinator;

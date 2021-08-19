@@ -14,7 +14,9 @@ const DEFAULT_TZIDS = [
 /**
  * Generate a random tzid, e.g., `America/Denver`.
  */
-const createTzidGenerator = (chance: Chance.Chance) => (tzids: string[] = DEFAULT_TZIDS): string =>
-  createSampleGenerator(chance)(tzids);
+const createTzidGenerator =
+  (chance: Chance.Chance) =>
+  (tzids: string[] = DEFAULT_TZIDS): string =>
+    createSampleGenerator(chance)(tzids);
 
 export default createTzidGenerator;
