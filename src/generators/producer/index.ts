@@ -11,8 +11,10 @@ const createNameGenerator = (chance: Chance.Chance) => (): string => chance.comp
  * Generates a random producer slug, e.g., `anderson`.
  * Optionally can override with an explicit name to generate from.
  */
-const createSlugGenerator = (chance: Chance.Chance) => (slug?: string): string =>
-  slugify(slug ?? createNameGenerator(chance)());
+const createSlugGenerator =
+  (chance: Chance.Chance) =>
+  (slug?: string): string =>
+    slugify(slug ?? createNameGenerator(chance)());
 
 const createProducerGenerators = (chance: Chance.Chance) => ({
   name: createNameGenerator(chance),

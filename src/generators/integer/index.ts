@@ -19,14 +19,16 @@ const DEFAULT_UPPER_EXCLUSIVE = 2147483647;
  * Generates a random integer (could be negative!). Optionally between `lowerExclusive` and `upperExclusive`.
  * If `lowerInclusive` or `upperExclusive` are not supplied, will be between -2147483648 and 2147483647.
  */
-const createIntegerGenerator = (chance: Chance.Chance) => (
-  lowerInclusive: number = DEFAULT_LOWER_INCLUSIVE,
-  upperExclusive: number = DEFAULT_UPPER_EXCLUSIVE,
-): number =>
-  chance.integer({
-    min: lowerInclusive,
-    // chance.integer's max param is inclusive
-    max: upperExclusive - 1,
-  });
+const createIntegerGenerator =
+  (chance: Chance.Chance) =>
+  (
+    lowerInclusive: number = DEFAULT_LOWER_INCLUSIVE,
+    upperExclusive: number = DEFAULT_UPPER_EXCLUSIVE,
+  ): number =>
+    chance.integer({
+      min: lowerInclusive,
+      // chance.integer's max param is inclusive
+      max: upperExclusive - 1,
+    });
 
 export default createIntegerGenerator;

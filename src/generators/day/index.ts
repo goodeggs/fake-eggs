@@ -39,26 +39,25 @@ type DayString = string;
  * TODO(serhalp) Consider dropping support for `from` and `to` being `Date`s as this is complex to
  * support and has many caveats.
  */
-const createDayGenerator = (chance: Chance.Chance) => (
-  from: Date | DayString = DEFAULT_FROM,
-  to: Date | DayString = DEFAULT_TO,
-): string => {
-  if (typeof from === 'string' && !DAY_REGEX.test(from)) {
-    throw new TypeError('`from` must be a Date or a YYYY-MM-DD string');
-  }
-  if (typeof to === 'string' && !DAY_REGEX.test(to)) {
-    throw new TypeError('`to` must be a Date or a YYYY-MM-DD string');
-  }
+const createDayGenerator =
+  (chance: Chance.Chance) =>
+  (from: Date | DayString = DEFAULT_FROM, to: Date | DayString = DEFAULT_TO): string => {
+    if (typeof from === 'string' && !DAY_REGEX.test(from)) {
+      throw new TypeError('`from` must be a Date or a YYYY-MM-DD string');
+    }
+    if (typeof to === 'string' && !DAY_REGEX.test(to)) {
+      throw new TypeError('`to` must be a Date or a YYYY-MM-DD string');
+    }
 
-  const _date = createDateGenerator(chance);
-  // Note that much of what follows is dependent on the environment's time zone, which generally
-  // should always be avoided, but since we're generating random data here, it seems OK, especially
-  // given the alternative is to pull in a whole library like moment.js.
-  const date = _date(new Date(from), new Date(to));
-  const year = String(date.getFullYear()).padStart(4, '0');
-  const month = String(date.getMonth() + 1).padStart(2, '0');
-  const dayOfMonth = String(date.getDate()).padStart(2, '0');
-  return `${year}-${month}-${dayOfMonth}`;
-};
+    const _date = createDateGenerator(chance);
+    // Note that much of what follows is dependent on the environment's time zone, which generally
+    // should always be avoided, but since we're generating random data here, it seems OK, especially
+    // given the alternative is to pull in a whole library like moment.js.
+    const date = _date(new Date(from), new Date(to));
+    const year = String(date.getFullYear()).padStart(4, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const dayOfMonth = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${dayOfMonth}`;
+  };
 
 export default createDayGenerator;
