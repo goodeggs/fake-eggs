@@ -16,6 +16,7 @@ import createFullNameGenerator from './generators/full_name';
 import createUniqueGenerator from './generators/unique';
 import createIntegerGenerator from './generators/integer';
 import createLastNameGenerator from './generators/last_name';
+import createLocationGenerators from './generators/location';
 import createMaybeCombinator from './combinators/maybe';
 import createNullableCombinator from './combinators/nullable';
 import createNumberGenerator from './generators/number';
@@ -26,7 +27,6 @@ import createProducerGenerators from './generators/producer';
 import createProductGenerators from './generators/product';
 import createSampleGenerator from './generators/sample';
 import createSentenceGenerator from './generators/sentence';
-import createStateGenerator from './generators/state';
 import createStringGenerator from './generators/string';
 import createTzidGenerator from './generators/tzid';
 import createUriGenerator from './generators/uri';
@@ -95,6 +95,7 @@ export const createFakeEggs = ({
     fullName: createFullNameGenerator(chance),
     integer: createIntegerGenerator(chance),
     lastName: createLastNameGenerator(chance),
+    location: createLocationGenerators(chance),
     number: createNumberGenerator(chance),
     objectId: createObjectIdGenerator(chance),
     phoneNumber: createPhoneNumberGenerators(chance),
@@ -102,7 +103,6 @@ export const createFakeEggs = ({
     product: createProductGenerators(chance),
     sample: createSampleGenerator(chance),
     sentence: createSentenceGenerator(chance),
-    state: createStateGenerator(chance),
     string: createStringGenerator(chance),
     tzid: createTzidGenerator(chance),
     unique: createUniqueGenerator(chance),
