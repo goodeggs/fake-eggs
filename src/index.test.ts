@@ -26,7 +26,6 @@ describe('the default export', function () {
     const values = ['a', 'b', 'c'];
     expect(values).toContain(fake.sample(values));
     expect(fake.digit()).toEqual(expect.any(Number));
-    expect(fake.state()).toEqual(expect.any(String));
     expect(fake.string()).toEqual(expect.any(String));
     expect(fake.uri()).toEqual(expect.any(String));
     expect(fake.zip()).toEqual(expect.any(String));

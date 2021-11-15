@@ -29,6 +29,13 @@ fake.employee.email(); // => 'rylee.mayert@goodeggs.com
 automatically. Please update this manually when making changes, until we can add some entation
 auto-generation back in. -->
 
+#### `fake.address`
+
+`() => string`
+
+Generates a random street address string (e.g., `5447 Bazpe Lane`).
+Recommended to use its `fake.location.address` counterpart.
+
 #### `fake.array`
 
 `<T>(lengthLowerInclusive: number, lengthUpperExclusive: number, generator: () => T) => T[]`
@@ -158,6 +165,24 @@ Generates a random integer (could be negative!). Optionally between `lowerExclus
 
 Generates a random last name, e.g., `Armstrong`.
 
+#### `fake.location.address`
+
+`() => string`
+
+Generates a random street address string (e.g., `5447 Bazpe Lane`).
+
+#### `fake.location.state`
+
+`() => string`
+
+Generates a random two letter state code, e.g., `CA`.
+
+#### `fake.location.zip`
+
+Generate a random zip code (e.g. 55416) with the option of specifying a ZIP+4 format (e.g. 12201-7050)
+
+`(options?: {plusfour?: boolean}) => string`
+
 #### `fake.maybe`
 
 `<T>(returnValue: () => T) => ?T`
@@ -247,12 +272,6 @@ Chooses one of the elements of the provided `array`. The given array cannot be e
 
 Generates a random sentence beginning with a capitalized letter and ending with a period.
 
-#### `fake.state`
-
-`() => string`
-
-Generates a random two letter state code, e.g., `CA`.
-
 #### `fake.string`
 
 `(length?: number, charset?: string) => string`
@@ -316,7 +335,8 @@ Generate a random URI, e.g., `https://adl2j.goodeggs.com/ax/faj23`
 
 #### `fake.zip`
 
-Generate a random zip code (e.g. 55416) with the option of specifying a ZIP+4 format (e.g. 12201-7050)
+Generate a random zip code (e.g. 55416) with the option of specifying a ZIP+4 format (e.g. 12201-7050).
+Recommended to use its `fake.location.zip` counterpart.
 
 `(options?: {plusfour?: boolean}) => string`
 
