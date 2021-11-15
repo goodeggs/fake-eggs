@@ -245,6 +245,14 @@ Chooses one of the elements of the provided `array`. The given array cannot be e
 
 `() => string`
 
+Generates a random sentence beginning with a capitalized letter and ending with a period.
+
+#### `fake.state`
+
+`() => string`
+
+Generates a random two letter state code, e.g., `CA`.
+
 #### `fake.string`
 
 `(length?: number, charset?: string) => string`
