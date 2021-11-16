@@ -48,6 +48,11 @@ Calls supplied `generator` function to return an array of length `lengthLowerInc
 
 Returns `true` or `false`, chosen at random.
 
+
+#### `fake.chance`
+
+Exposes the underlying Chance.js client.
+
 #### `fake.customer.firstName`
 
 `() => string`
@@ -339,6 +344,16 @@ Generate a random zip code (e.g. 55416) with the option of specifying a ZIP+4 fo
 Recommended to use its `fake.location.zip` counterpart.
 
 `(options?: {plusfour?: boolean}) => string`
+
+## Chance.js methods
+
+`fake-eggs` uses [chance.js](https://chancejs.com/) behind the scenes. The chance.js object is exposed using `fake.chance`, if you wish to use any of its functions.
+
+i.e.
+```
+fake.chance.address()
+fake.chance.state()
+```
 
 ## Contributing
 

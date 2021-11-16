@@ -69,6 +69,11 @@ export const createFakeEggs = ({
   debug(`Initialized fake-eggs`);
 
   return {
+    /**
+     * Chance itself
+     */
+    chance,
+
     /*
      * Combinators
      */
