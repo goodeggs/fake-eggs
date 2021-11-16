@@ -51,7 +51,7 @@ Returns `true` or `false`, chosen at random.
 
 #### `fake.chance`
 
-Exposes the underlying Chance.js client.
+Exposes the underlying [Chance.js](https://chancejs.com/) client.
 
 #### `fake.customer.firstName`
 
