@@ -30,4 +30,12 @@ describe('the default export', function () {
     expect(fake.uri()).toEqual(expect.any(String));
     expect(fake.zip()).toEqual(expect.any(String));
   });
+
+  it('exposes chance.js', () => {
+    // A random smattering of chance.js methods
+    expect(fake.chance.coordinates()).toEqual(expect.any(String));
+    expect(fake.chance.age()).toEqual(expect.any(Number));
+    expect(fake.chance.ssn({ssnFour: true})).toMatch(/\d{4}/);
+    expect(fake.chance.phone({country: 'us'})).toMatch(/\(\d{3}\)\s\d{3}-\d{4}/);
+  });
 });
