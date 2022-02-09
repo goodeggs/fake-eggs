@@ -316,10 +316,10 @@ For example:
 ```js
 import fake from 'fake-eggs';
 
-const uniqueFoo = fake.globallyUniqueString(() => 'foo');
-uniqueFoo(); // => "foo_0"
-uniqueFoo(); // => "foo_1"
-uniqueFoo(); // => "foo_2"
+const uniqueFoo = fake.unique(fake.string);
+uniqueFoo(); // => e.g. "foo_0"
+uniqueFoo(); // => e.g. "foo_1"
+uniqueFoo(); // => e.g. "foo_2"
 
 // This could theoretically fail, but we'd have to get extraordinarily unlucky for it to do so.
 const generateInteger0to100 = (): number => Math.floor(Math.random() * 100);
