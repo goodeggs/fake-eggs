@@ -16,7 +16,12 @@ const createSlugGenerator =
   (slug?: string): string =>
     slugify(slug ?? createNameGenerator(chance)());
 
-const createProducerGenerators = (chance: Chance.Chance) => ({
+interface Producer {
+  name: ReturnType<typeof createNameGenerator>;
+  slug: ReturnType<typeof createSlugGenerator>;
+}
+
+const createProducerGenerators = (chance: Chance.Chance): Producer => ({
   name: createNameGenerator(chance),
   slug: createSlugGenerator(chance),
 });

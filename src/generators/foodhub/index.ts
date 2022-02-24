@@ -11,7 +11,11 @@ const foodhubSlugs = ['sfbay', 'la', 'nola', 'nyc', 'MAR1', 'OKN2', 'VRN1'];
 const createSlugGenerator = (chance: Chance.Chance) => (): string =>
   createSampleGenerator(chance)(foodhubSlugs);
 
-const createFoodhubGenerators = (chance: Chance.Chance) => ({
+interface Foodhub {
+  slug: ReturnType<typeof createSlugGenerator>;
+}
+
+const createFoodhubGenerators = (chance: Chance.Chance): Foodhub => ({
   slug: createSlugGenerator(chance),
 });
 

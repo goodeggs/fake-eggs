@@ -6,7 +6,15 @@ import createPhoneNumberGenerator from '../phone_number';
 import createFullNameGenerator from '../full_name';
 import createEmailGenerator from '../email';
 
-const createCustomerGenerators = (chance: Chance.Chance) => ({
+interface Customer {
+  firstName: ReturnType<typeof createFirstNameGenerator>;
+  lastName: ReturnType<typeof createLastNameGenerator>;
+  phoneNumber: ReturnType<typeof createPhoneNumberGenerator>;
+  fullName: ReturnType<typeof createFullNameGenerator>;
+  email: ReturnType<typeof createEmailGenerator>;
+}
+
+const createCustomerGenerators = (chance: Chance.Chance): Customer => ({
   firstName: createFirstNameGenerator(chance),
   lastName: createLastNameGenerator(chance),
   phoneNumber: createPhoneNumberGenerator(chance),

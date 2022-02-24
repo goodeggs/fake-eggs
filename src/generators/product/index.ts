@@ -30,7 +30,14 @@ const storageType = (chance: Chance.Chance) => (): string => {
  */
 const count = (chance: Chance.Chance) => (): number => createIntegerGenerator(chance)(1, 100);
 
-const createProductGenerators = (chance: Chance.Chance) => ({
+interface Product {
+  count: ReturnType<typeof count>;
+  name: ReturnType<typeof name>;
+  storageType: ReturnType<typeof storageType>;
+  unit: ReturnType<typeof unit>;
+}
+
+const createProductGenerators = (chance: Chance.Chance): Product => ({
   count: count(chance),
   name: name(chance),
   storageType: storageType(chance),

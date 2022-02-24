@@ -61,6 +61,8 @@ export interface CreateFakeEggsOptions {
   seed?: string;
 }
 
+// Let TS infer this type, since it's pretty verbose to duplicate and provides no value.
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export const createFakeEggs = ({
   seed = Math.floor(Math.random() * 10 ** 13).toString(),
 }: CreateFakeEggsOptions = {}) => {
