@@ -24,7 +24,15 @@ const createEmployeeEmailGenerator =
     });
   };
 
-const createEmployeeGenerators = (chance: Chance.Chance) => ({
+interface Employee {
+  firstName: ReturnType<typeof createFirstNameGenerator>;
+  lastName: ReturnType<typeof createLastNameGenerator>;
+  phoneNumber: ReturnType<typeof createPhoneNumberGenerator>;
+  fullName: ReturnType<typeof createFullNameGenerator>;
+  email: ReturnType<typeof createEmployeeEmailGenerator>;
+}
+
+const createEmployeeGenerators = (chance: Chance.Chance): Employee => ({
   firstName: createFirstNameGenerator(chance),
   lastName: createLastNameGenerator(chance),
   phoneNumber: createPhoneNumberGenerator(chance),
