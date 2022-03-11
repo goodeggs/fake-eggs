@@ -40,8 +40,8 @@ export interface CreateFakeEggsOptions {
   /**
    * seed is an optional value that can be passed to the fake data generator to generate
    * repeatably random data (it will generate the same data for the same sequence of calls).
-   * When `process.env.FAKE_EGGS_SEED` is set to a non-empty value and `seed` is not explicitly
-   * passed, `process.env.FAKE_EGGS_SEED` will be used.
+   * When `process.env.FAKE_DATA_SEED` is set to a non-empty value and `seed` is not explicitly
+   * passed, `process.env.FAKE_DATA_SEED` will be used.
    *
    * This can be used, for example, to make it easier to reproduce flaky tests locally:
    *
