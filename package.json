@@ -40,11 +40,11 @@
     "debug": "^4.3.4"
   },
   "devDependencies": {
-    "@babel/cli": "^7.17.6",
-    "@babel/core": "^7.17.9",
-    "@babel/node": "^7.16.8",
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.17.10",
+    "@babel/node": "^7.17.10",
     "@babel/plugin-proposal-optional-chaining": "^7.16.7",
-    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-env": "^7.17.10",
     "@babel/preset-typescript": "^7.16.7",
     "@goodeggs/toolkit": "^6.0.1",
     "@goodeggs/tsconfig": "^1.0.0",
