@@ -45,13 +45,13 @@ describe('integer', () => {
     const chance = new Chance();
     const integer = createIntegerGenerator(chance);
 
-    expect(() => integer(0, 0)).toThrowError('Chance: Min cannot be greater than Max.');
+    expect(() => integer(0, 0)).toThrow('Chance: Min cannot be greater than Max.');
   });
 
   it('throws when `lowerInclusive` is greater than `upperExclusive`', (): void => {
     const chance = new Chance();
     const integer = createIntegerGenerator(chance);
 
-    expect(() => integer(10, 0)).toThrowError('Chance: Min cannot be greater than Max.');
+    expect(() => integer(10, 0)).toThrow('Chance: Min cannot be greater than Max.');
   });
 });
