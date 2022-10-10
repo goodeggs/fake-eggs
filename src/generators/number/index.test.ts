@@ -7,9 +7,7 @@ describe('createNumberGenerator', function () {
     const chance = new Chance();
     const number = createNumberGenerator(chance);
 
-    expect(() => number(0, 10000, 7)).toThrowError(
-      '"fixed" must be less than or equal to 6 or null',
-    );
+    expect(() => number(0, 10000, 7)).toThrow('"fixed" must be less than or equal to 6 or null');
   });
 
   it('generates a random number', function () {
