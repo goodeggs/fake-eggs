@@ -2468,10 +2468,10 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
-"@types/chance@^1.1.4":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@types/chance/-/chance-1.1.4.tgz#bdb4f5b36ed7622640b597720e8affbfaa7bbfd7"
-  integrity sha512-et3alUWI9jEPnGai+QRCyDdRMYS+atq32IaldWURyxPRZBYg+cSwppxK2UHnDv9X/0pdoxR3Ufbz5hRmjD/uNg==
+"@types/chance@^1.1.5":
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@types/chance/-/chance-1.1.5.tgz#c851fce6e7ed118b71322ad4efd90f5c5147b0af"
+  integrity sha512-aeEqLplovJlvHzbb9pFJw/pe7iGjPnhDFQmQ4MOoShCm3N09rCpU++A0WPCSavcMXAzc91ofRy3vXbIqLzn1aw==
 
 "@types/color-name@^1.1.1":
   version "1.1.1"
