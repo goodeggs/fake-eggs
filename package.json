@@ -46,7 +46,7 @@
     "@babel/plugin-proposal-optional-chaining": "^7.21.0",
     "@babel/preset-env": "^7.24.7",
     "@babel/preset-typescript": "^7.24.7",
-    "@goodeggs/toolkit": "^7.0.1",
+    "@goodeggs/toolkit": "^8.0.0",
     "@goodeggs/tsconfig": "^2.0.2",
     "@types/debug": "^4.1.12",
     "@types/jest": "^29.5.12",
